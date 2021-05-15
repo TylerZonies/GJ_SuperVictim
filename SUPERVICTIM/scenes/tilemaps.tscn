@@ -214,9 +214,20 @@ limit_right = 1060
 
 [node name="Parrali" parent="." instance=ExtResource( 5 )]
 
-[node name="box" parent="." instance=ExtResource( 10 )]
-position = Vector2( 566.464, 23.672 )
-
 [node name="cars" type="Node2D" parent="."]
 
 [node name="Node2D" type="Node2D" parent="cars"]
+
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="box" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 550.464, 23.672 )
+
+[node name="box3" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 566.464, 7.672 )
+
+[node name="box4" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 454.464, 94.0853 )
+
+[node name="box2" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 566.464, 23.672 )
