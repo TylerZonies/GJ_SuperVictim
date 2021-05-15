@@ -29,21 +29,19 @@ enabled = true
 cast_to = Vector2( 0, 12 )
 collision_mask = 14
 
-[node name="raycasts" type="Node2D" parent="box_obj"]
-
-[node name="left" type="RayCast2D" parent="box_obj/raycasts"]
+[node name="left" type="RayCast2D" parent="box_obj"]
 rotation = 1.5708
 enabled = true
 cast_to = Vector2( 0, 12 )
 collision_mask = 8
 
-[node name="right" type="RayCast2D" parent="box_obj/raycasts"]
+[node name="right" type="RayCast2D" parent="box_obj"]
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 12 )
 collision_mask = 8
 
-[node name="up" type="RayCast2D" parent="box_obj/raycasts"]
+[node name="up" type="RayCast2D" parent="box_obj"]
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 12 )
