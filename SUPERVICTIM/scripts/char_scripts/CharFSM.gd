@@ -30,18 +30,26 @@ func _get_transition(delta):
 		states.jump:
 			if parent.check_on_floor():
 				return states.idle
+			if parent.velocity.y >= 0:
+				return states.fall
+		states.fall:
+			if parent.check_on_floor():
+				return states.idle
 
 func _enter_state(old_state, new_state):
 	print(new_state)
 	match new_state:
 		states.idle:
 			parent.SPRITE.animation = 'idle'
+			parent.set_fall_through(true)
 		states.walk:
 			parent.sprite_dir(parent.x_direction)
 			print(parent.x_direction)
 			parent.SPRITE.animation = 'walk'
 		states.jump:
 			parent.SPRITE.animation = 'jump'
+		states.fall:
+			parent.SPRITE.animation = 'fall'
 
 func _exit_state(old_state, new_state):
 	pass

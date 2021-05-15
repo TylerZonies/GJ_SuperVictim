@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var velocity = Vector2(0,0)
-var fall_speed = 250
+var fall_speed = 350
 var jump_speed = 11000
 var x_direction = 0
 var y_direction = 0
@@ -34,6 +34,10 @@ func get_input(delta):
 		elif RIGHT:
 			SPRITE.flip_h = false
 	
+	if DOWN:
+		#set_fall_through(false)
+		position.y += 1
+	
 	move(x_direction, delta)
 	
 
@@ -60,3 +64,12 @@ func sprite_dir(dir):
 func jump(delta):
 	if check_on_floor():
 		velocity.y = -jump_speed * delta
+
+func set_fall_through(set):
+	print(set)
+	set_collision_mask_bit(2, set)
+	for raycast in floor_raycasts.get_children():
+		raycast.set_collision_mask_bit(2, set)
+	get_node("CollisionShape2D").disabled = true
+	get_node("CollisionShape2D").disabled = false
+	print(check_on_floor())
