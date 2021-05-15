@@ -216,3 +216,7 @@ limit_right = 1060
 
 [node name="box" parent="." instance=ExtResource( 10 )]
 position = Vector2( 566.464, 23.672 )
+
+[node name="cars" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="cars"]
