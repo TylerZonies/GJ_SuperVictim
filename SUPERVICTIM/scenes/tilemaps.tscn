@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=7]
+[ext_resource path="res://assets/objects/billboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -17,10 +19,19 @@ points = PoolVector2Array( 0, 16, 16, 0, 16, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 1.28942, 0, 0 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 16, 16, 0, 16, 16, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 16, 0, 16, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=8]
 0/name = "collision_tiles.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -94,14 +105,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 1.28942, 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 6 )
+3/shape = SubResource( 4 )
 3/shape_one_way = true
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -115,9 +126,22 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 1.28942, 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
+4/shape = SubResource( 5 )
+4/shape_one_way = true
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 4/z_index = 0
 5/name = "collision_tiles2.png 5"
 5/texture = ExtResource( 7 )
@@ -129,9 +153,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 1.28942, 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
+5/shape = SubResource( 7 )
+5/shape_one_way = true
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 5/z_index = 0
 
 [node name="tilemaps" type="Node2D"]
@@ -141,7 +172,10 @@ position = Vector2( 1.53648, 168.328 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -393200, 2, 0, -393176, 2, 0, -131072, 0, 0, -131064, 1, 0, -131024, 0, 0, -65504, 4, 0, 65592, 5, 0, 131096, 3, 0 )
+tile_data = PoolIntArray( -393200, 2, 0, -131072, 0, 0, -131064, 1, 0, -131033, 6, 0, -131024, 0, 0, 65592, 5, 0, 131101, 3, 0 )
+
+[node name="billboard" parent="." instance=ExtResource( 8 )]
+position = Vector2( 550.464, 15.672 )
 
 [node name="street_tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -151,6 +185,7 @@ format = 1
 tile_data = PoolIntArray( 393216, 0, 0, 393218, 1, 0, 393220, 1, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393228, 0, 0, 393230, 0, 0, 393232, 1, 0, 393234, 0, 0, 393236, 2, 0, 393238, 1, 0, 393240, 0, 0, 393242, 0, 0, 393244, 0, 0, 393246, 0, 0, 393248, 0, 0, 393250, 0, 0, 393252, 0, 0, 393254, 0, 0, 393255, 1, 0, 393256, 0, 0, 393257, 0, 0, 393258, 2, 0, 393259, 0, 0, 393260, 2, 0, 393261, 2, 0, 393262, 2, 0, 393263, 2, 0, 393264, 2, 0, 393265, 0, 0, 393266, 1, 0, 393267, 0, 0, 393268, 1, 0, 393269, 0, 0, 393270, 0, 0, 393272, 0, 0, 393273, 0, 0, 393274, 0, 0, 393275, 0, 0, 393276, 0, 0, 393277, 0, 0, 393278, 0, 0, 393279, 0, 0, 393280, 0, 0 )
 
 [node name="collision" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
@@ -159,12 +194,13 @@ format = 1
 tile_data = PoolIntArray( 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 458801, 0, 0, 458802, 0, 0, 458803, 0, 0, 458804, 0, 0, 458805, 0, 0, 458806, 0, 0, 458807, 0, 0, 458808, 0, 0, 458809, 0, 0, 458810, 0, 0, 458811, 0, 0, 458812, 0, 0, 458813, 0, 0, 458814, 0, 0, 458815, 0, 0, 458816, 0, 0, 458817, 0, 0 )
 
 [node name="one_way_collision" type="TileMap" parent="."]
-tile_set = SubResource( 5 )
+visible = false
+tile_set = SubResource( 8 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( -327664, 3, 0, -327663, 3, 0, -327662, 3, 0, -327661, 3, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -327640, 3, 0, -327639, 3, 0, -327638, 3, 0, -327637, 3, 0, -327636, 3, 0, -327635, 3, 0, -327634, 3, 0, -327633, 3, 0, -131055, 3, 0, -131053, 3, 0, -131052, 3, 0, -131050, 3, 0, -131031, 3, 0, -131029, 3, 0, -131028, 3, 0, -131026, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 34, 3, 0, 35, 3, 0, 36, 3, 0, 37, 3, 0, 65554, 3, 0, 65557, 3, 0, 65578, 3, 0, 65581, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131104, 3, 0, 131105, 3, 0, 131110, 3, 0, 131111, 3, 0, 131120, 3, 0, 131121, 3, 0, 131122, 3, 0, 131123, 3, 0, 131124, 3, 0, 131125, 3, 0, 131126, 3, 0, 131127, 3, 0, 131131, 3, 0, 131132, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196632, 3, 0, 196633, 3, 0, 196634, 3, 0, 196635, 3, 0, 196636, 3, 0, 196666, 3, 0, 196669, 3, 0, 262145, 3, 0, 262146, 3, 0, 262149, 3, 0, 262150, 3, 0, 262193, 3, 0, 262194, 3, 0, 262197, 3, 0, 262198, 3, 0, 327693, 3, 0, 327694, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327701, 3, 0, 327702, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327717, 3, 0, 327718, 3, 0, 327719, 3, 0, 327721, 3, 0, 327722, 3, 0, 327723, 3, 0, 327725, 3, 0, 327726, 3, 0, 327736, 3, 0, 327737, 3, 0, 327742, 3, 0, 327743, 3, 0 )
+tile_data = PoolIntArray( -327664, 3, 0, -327663, 3, 0, -327662, 3, 0, -327661, 3, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -131055, 3, 0, -131053, 3, 0, -131052, 3, 0, -131050, 3, 0, -131033, 3, 0, -131032, 3, 0, -131031, 3, 0, -131030, 3, 0, -131029, 3, 0, -131028, 3, 0, -131027, 3, 0, -131026, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 43, 3, 0, 44, 3, 0, 45, 3, 0, 65554, 3, 0, 65557, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 131120, 3, 0, 131121, 3, 0, 131122, 3, 0, 131123, 3, 0, 131124, 3, 0, 131125, 3, 0, 131126, 3, 0, 131127, 3, 0, 131131, 3, 0, 131132, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196637, 3, 0, 196638, 3, 0, 196639, 3, 0, 196640, 3, 0, 196666, 3, 0, 196669, 3, 0, 262145, 3, 0, 262146, 3, 0, 262149, 3, 0, 262150, 3, 0, 262193, 3, 0, 262194, 3, 0, 262197, 3, 0, 262198, 3, 0, 327693, 3, 0, 327694, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327701, 3, 0, 327702, 3, 0, 327736, 3, 0, 327737, 3, 0, 327742, 3, 0, 327743, 3, 0 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 293.25, 94.8601 )
@@ -177,3 +213,21 @@ limit_left = 0
 limit_right = 1060
 
 [node name="Parrali" parent="." instance=ExtResource( 5 )]
+
+[node name="cars" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="cars"]
+
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="box" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 550.464, 23.672 )
+
+[node name="box3" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 566.464, 7.672 )
+
+[node name="box4" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 454.464, 94.0853 )
+
+[node name="box2" parent="boxes" instance=ExtResource( 10 )]
+position = Vector2( 566.464, 23.672 )
