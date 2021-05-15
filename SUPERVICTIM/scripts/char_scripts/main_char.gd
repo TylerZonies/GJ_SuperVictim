@@ -84,4 +84,4 @@ func push():   ## added push function for objects (i.e boxes n shit)
 		if collider.is_in_group("moveable"):
 			if collider.moveable == true:
 				print("i can move this box!")
-				collider.push_object()
+				collider.push_object(x_direction)

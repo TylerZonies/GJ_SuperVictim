@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 [node name="box_obj" type="RigidBody2D" parent="."]
 collision_layer = 7
 collision_mask = 6
-mode = 3
+mode = 1
 mass = 100.0
 gravity_scale = 5.0
 contact_monitor = true
@@ -21,11 +21,28 @@ linear_velocity = Vector2( 0, 20 )
 [node name="collider_shape" type="CollisionShape2D" parent="box_obj"]
 shape = SubResource( 1 )
 
+[node name="box" type="Sprite" parent="box_obj"]
+texture = ExtResource( 1 )
+
 [node name="floorcast" type="RayCast2D" parent="box_obj"]
 enabled = true
 cast_to = Vector2( 0, 12 )
 collision_mask = 6
 
-[node name="box" type="Sprite" parent="box_obj"]
-texture = ExtResource( 1 )
+[node name="raycasts" type="Node2D" parent="box_obj"]
+
+[node name="left" type="RayCast2D" parent="box_obj/raycasts"]
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0, 12 )
+
+[node name="right" type="RayCast2D" parent="box_obj/raycasts"]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 12 )
+
+[node name="up" type="RayCast2D" parent="box_obj/raycasts"]
+rotation = 3.14159
+enabled = true
+cast_to = Vector2( 0, 12 )
 [connection signal="body_shape_entered" from="box_obj" to="." method="_on_box_obj_body_shape_entered"]

@@ -16,8 +16,8 @@ func _ready():
 func _process(delta):
 	apply_gravity(delta)
 	position += velocity
-func push_object():
-	position.x += 1
+func push_object(dir):
+	position.x += dir
 
 func check_on_floor():
 	if floor_cast.is_colliding():
