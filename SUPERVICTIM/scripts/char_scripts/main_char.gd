@@ -1,7 +1,7 @@
 extends KinematicBody2D
 var velocity = Vector2(0,0)
 var fall_speed = 250
-var jump_speed = 5000
+var jump_speed = 10000
 var x_direction = 0
 var y_direction = 0
 var sprite_dir = 1
