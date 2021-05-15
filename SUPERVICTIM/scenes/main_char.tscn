@@ -2,116 +2,112 @@
 
 [ext_resource path="res://scripts/char_scripts/main_char.gd" type="Script" id=1]
 [ext_resource path="res://scripts/char_scripts/CharFSM.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/chars/main_char.png" type="Texture" id=3]
 
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/main_char.png-54819d86273af8cec9696c3a7d2138ae.stex"
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
 region = Rect2( 32, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
 region = Rect2( 64, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
 region = Rect2( 32, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
 region = Rect2( 64, 96, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
 region = Rect2( 0, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = SubResource( 1 )
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
 region = Rect2( 32, 128, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "walk",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "jump",
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="CapsuleShape2D" id=16]
 radius = 5.53036
 height = 18.6594
 
 [node name="player" type="KinematicBody2D"]
 position = Vector2( 136.696, 67.0375 )
+collision_mask = 6
 script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 16 )
+frames = SubResource( 15 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.774841, -0.774849 )
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 
 [node name="CharFSM" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="floor_raycasts" type="Node2D" parent="."]
+
+[node name="platform_detector" type="RayCast2D" parent="floor_raycasts"]
+position = Vector2( -2.174, 13.5 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+
+[node name="platform_detector2" type="RayCast2D" parent="floor_raycasts"]
+position = Vector2( 3.643, 13.56 )
+enabled = true
+cast_to = Vector2( 0, 1 )

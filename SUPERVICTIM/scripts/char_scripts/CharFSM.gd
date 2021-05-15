@@ -5,11 +5,13 @@ func _ready():
 	add_state('idle')
 	add_state('walk')
 	add_state('jump')
+	add_state('fall')
 	call_deferred('set_state', states.idle)
 	print(states)
 
 func _state_logic(delta):
-	pass
+	if parent.y_direction == 1:
+		parent.jump(delta)
 
 func _get_transition(delta):
 	match state:
@@ -23,6 +25,8 @@ func _get_transition(delta):
 				return states.jump
 			elif parent.x_direction == 0:
 				return states.idle
+			elif parent.y_direction == 1:
+				return states.jump
 		states.jump:
 			if parent.check_on_floor():
 				return states.idle
