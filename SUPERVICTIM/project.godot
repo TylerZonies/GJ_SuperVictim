@@ -76,6 +76,12 @@ down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1=false
+2d_physics/layer_2=false
+2d_physics/layer_3=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
