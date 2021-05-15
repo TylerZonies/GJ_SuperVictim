@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background.tres" type="TileSet" id=4]
 
 [node name="tilemaps" type="Node2D"]
+position = Vector2( 194.78, 108.627 )
+
+[node name="background_shit" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131064, 0, 0 )
 
 [node name="street_tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -17,4 +26,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0 )
+tile_data = PoolIntArray( 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 262153, 0, 0, 262154, 0, 0, 262157, 0, 0, 262158, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 14.2327, -41.2496 )
