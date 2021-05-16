@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=1]
+
+[node name="floor_tiles" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 16 )
+cell_tile_origin = 1
+format = 1
+tile_data = PoolIntArray( 1703910, 0, 0 )
