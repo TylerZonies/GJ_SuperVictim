@@ -23,7 +23,7 @@ func get_input(delta):
 	var RIGHT = Input.is_action_pressed('right')
 	var UP = Input.is_action_pressed('up')
 	var DOWN = Input.is_action_pressed('down')
-	var PUSH = Input.is_action_pressed("push")
+	var PUSH = Input.is_action_just_pressed("push")
 	x_direction = -int(LEFT) + int(RIGHT)
 	y_direction = -int(DOWN) + int(UP)
 	
