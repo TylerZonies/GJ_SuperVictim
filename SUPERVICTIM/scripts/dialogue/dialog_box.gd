@@ -18,6 +18,7 @@ func _ready():
 			print("im here", size)
 	$Timer.wait_time = time
 	$Timer.start()
+	
 
 
 func _on_Timer_timeout():
@@ -27,5 +28,6 @@ func _on_Timer_timeout():
 		is_deleting = true
 		$Timer.start()
 		get_parent().is_talking = false
+		
 	else:
 		queue_free()

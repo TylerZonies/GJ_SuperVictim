@@ -6,6 +6,7 @@ var x_direction = 0
 var y_direction = 0
 var sprite_dir = 1
 
+var controls_disabled = false
 
 const UP = Vector2(0,-1)
 const GROUND_SPEED = 5000
@@ -14,7 +15,8 @@ onready var platform_detector = get_node("platform_detector")
 onready var floor_raycasts = get_node("floor_raycasts")
 onready var side_raycast = get_node("object_detector")
 func _physics_process(delta):
-	get_input(delta)
+	if !controls_disabled:
+		get_input(delta)
 	apply_gravity(delta)
 	move_and_slide(velocity, UP)
 	
@@ -94,8 +96,18 @@ func push():   ## added push function for objects (i.e boxes n shit)
 				collider.push_object(x_direction)
 		if collider.is_in_group("npc"):
 			collider.make_dialog()
+			start_timer()
 			print(collider)
+			
 func audio_player(sfx_str):
 	var sound = get_node(str(sfx_str))
 	sound.playing = false
 	sound.playing = true
+
+func start_timer():
+		x_direction = 0
+		y_direction = 0
+		controls_disabled = true
+		$wait_timer.start()
+func _on_wait_timer_timeout():
+	controls_disabled = false
