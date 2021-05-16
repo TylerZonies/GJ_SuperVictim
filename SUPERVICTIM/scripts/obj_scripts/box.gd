@@ -41,6 +41,7 @@ func push_object(dir, pushed = false):
 	var collisions = check_collider()
 	if collisions.size() == 0:
 		move(dir)
+		audio_player("roll_sfx")
 	else:
 		for collision in collisions:
 			match collision.dir:
@@ -52,6 +53,8 @@ func push_object(dir, pushed = false):
 						#print(collision.obj)
 						#print('~~~~~~~~~~~~~~~~~~~~~~~~~~')
 						collision.obj.move(dir)
+						move(dir)
+						audio_player("roll_sfx")
 					
 				"up":
 					return
@@ -121,5 +124,8 @@ func check_collider():
 				
 	return collisions
 
-
+func audio_player(sfx_str):
+	var sound = get_node(str(sfx_str))
+	sound.playing = false
+	sound.playing = true
 

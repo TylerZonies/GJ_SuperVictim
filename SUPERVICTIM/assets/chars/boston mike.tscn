@@ -1,27 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/sprites/chars/boston_mike.png" type="Texture" id=1]
+[ext_resource path="res://assets/chars/npc_body.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/chars/boston mike.gd" type="Script" id=3]
+[ext_resource path="res://assets/chars/NPC.tscn" type="PackedScene" id=4]
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=38]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 36 ), SubResource( 37 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [node name="boston mike" type="Node2D"]
-position = Vector2( 366.464, -96.328 )
+script = ExtResource( 3 )
 
 [node name="animation" type="AnimatedSprite" parent="."]
-frames = SubResource( 38 )
+frames = SubResource( 3 )
 frame = 1
 playing = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -8 )
+
+[node name="NPC" parent="." instance=ExtResource( 4 )]
