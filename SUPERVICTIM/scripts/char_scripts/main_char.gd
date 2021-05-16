@@ -34,6 +34,9 @@ func get_input(delta):
 		elif RIGHT:
 			SPRITE.flip_h = false
 	
+	if Input.is_action_just_released("up") and velocity.y < -1000:
+		velocity.y = -1000
+	
 	if DOWN:
 		#set_fall_through(false)
 		position.y += 1
@@ -75,6 +78,7 @@ func set_fall_through(set):
 	get_node("CollisionShape2D").disabled = true
 	get_node("CollisionShape2D").disabled = false
 	print(check_on_floor())
+
 func push():   ## added push function for objects (i.e boxes n shit)
 				## checks for object, gets its parent and asks if its moveable
 	var collider = side_raycast.get_collider()

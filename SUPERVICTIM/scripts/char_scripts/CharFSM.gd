@@ -10,8 +10,10 @@ func _ready():
 	print(states)
 
 func _state_logic(delta):
-	if parent.y_direction == 1:
+	if parent.y_direction == 1 and parent.velocity.y >= 0:
 		parent.jump(delta)
+	if state == states.jump && Input.is_action_just_released('up') and parent.velocity.y < 0:
+		parent.velocity.y = 0
 
 func _get_transition(delta):
 	match state:
