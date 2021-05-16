@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/objects/billboard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/car.gd" type="Script" id=9]
 [ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/chars/oboy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/chars/girl_on_phone.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/chars/bartender.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/sounds/wind_loop.ogg" type="AudioStream" id=16]
 
@@ -185,7 +187,7 @@ tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_tile_origin = 1
 format = 1
-tile_data = PoolIntArray( 458750, 1, 0, 393216, 0, 0, 393218, 1, 0, 393220, 1, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393228, 0, 0, 393230, 0, 0, 393232, 1, 0, 393234, 0, 0, 393236, 2, 0, 393238, 1, 0, 393240, 0, 0, 393242, 0, 0, 393244, 0, 0, 393246, 0, 0, 393248, 0, 0, 393250, 0, 0, 393252, 0, 0, 393254, 0, 0, 393255, 1, 0, 393256, 0, 0, 393258, 1, 0, 393260, 2, 0, 393262, 0, 0, 393264, 0, 0, 393266, 1, 0, 393268, 2, 0, 393270, 1, 0, 393272, 0, 0, 393274, 1, 0, 393276, 2, 0, 393278, 1, 0, 393280, 0, 0, 393282, 1, 0, 393284, 0, 0 )
+tile_data = PoolIntArray( 458750, 1, 0, 393216, 0, 0, 393218, 1, 0, 393220, 1, 0, 393222, 0, 0, 393224, 0, 0, 393226, 1, 0, 393228, 0, 0, 393230, 0, 0, 393232, 1, 0, 393234, 0, 0, 393236, 2, 0, 393238, 1, 0, 393240, 0, 0, 393242, 0, 0, 393244, 0, 0, 393246, 0, 0, 393248, 0, 0, 393250, 0, 0, 393252, 0, 0, 393254, 0, 0, 393255, 1, 0, 393256, 0, 0, 393258, 1, 0, 393260, 2, 0, 393262, 0, 0, 393264, 0, 0, 393266, 1, 0, 393268, 2, 0, 393270, 1, 0, 393272, 0, 0, 393274, 1, 0, 393276, 2, 0, 393278, 1, 0, 393280, 0, 0, 393282, 1, 0, 393284, 0, 0, 393286, 0, 0, 393288, 2, 0, 393290, 1, 0, 393292, 0, 0 )
 
 [node name="collision" type="TileMap" parent="."]
 visible = false
@@ -222,9 +224,16 @@ position = Vector2( 1014.46, -56.328 )
 position = Vector2( 839.059, 23.672 )
 
 [node name="npcs" type="Node2D" parent="."]
+position = Vector2( 6.46352, -0.328003 )
 
 [node name="bartender" parent="npcs" instance=ExtResource( 13 )]
-position = Vector2( 1030.46, 78.8601 )
+position = Vector2( 1030.46, 86.8601 )
+
+[node name="oboy" parent="npcs" instance=ExtResource( 11 )]
+position = Vector2( 798.464, 79.672 )
+
+[node name="girl_on_phone" parent="npcs" instance=ExtResource( 12 )]
+position = Vector2( 608, 0.328003 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 293.25, 94.8601 )
@@ -234,13 +243,13 @@ position = Vector2( -295.652, -262.609 )
 anchor_mode = 0
 current = true
 limit_left = 0
-limit_right = 1060
+limit_right = 1180
 
 [node name="cars" type="Node2D" parent="."]
 script = ExtResource( 9 )
 
 [node name="car_right" type="Position2D" parent="cars"]
-position = Vector2( 1134.46, 119.672 )
+position = Vector2( 1222.46, 119.672 )
 
 [node name="car_left" type="Position2D" parent="cars"]
 position = Vector2( -97.5365, 159.672 )
