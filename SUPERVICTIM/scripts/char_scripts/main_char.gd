@@ -8,6 +8,8 @@ var sprite_dir = 1
 
 var controls_disabled = false
 
+var items_held = []
+
 const UP = Vector2(0,-1)
 const GROUND_SPEED = 5000
 onready var SPRITE = get_node("Sprite")
@@ -97,8 +99,24 @@ func push():   ## added push function for objects (i.e boxes n shit)
 		if collider.is_in_group("npc"):
 			collider.make_dialog()
 			start_timer()
+			SPRITE.play("wave")
 			print(collider)
+		if collider.is_in_group("item"):
+			item_acquired(collider)
+			collider.queue_free()
 			
+
+func item_acquired(item_node):
+	var item_dialog = load("res://assets/objects/item_dialog.tscn")
+	item_dialog = item_dialog.instance()
+	item_dialog.item = str(item_node.item)
+	item_dialog.position.y += -24
+	add_child(item_dialog)
+	items_held.append(item_node.item)
+	print(items_held)
+	
+	start_timer()
+	SPRITE.play("item_obtain")
 func audio_player(sfx_str):
 	var sound = get_node(str(sfx_str))
 	sound.playing = false
