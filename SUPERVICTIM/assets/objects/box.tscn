@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/sprites/objects/box.png" type="Texture" id=1]
 [ext_resource path="res://scripts/obj_scripts/box.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/roll_sfx.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.27588, 8.47015 )
@@ -47,4 +48,8 @@ position = Vector2( 0, -1.47157 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 14
+
+[node name="roll_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -12.652
 [connection signal="body_shape_entered" from="box_obj" to="." method="_on_box_obj_body_shape_entered"]

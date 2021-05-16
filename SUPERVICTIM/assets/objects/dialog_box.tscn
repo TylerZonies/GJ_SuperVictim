@@ -1,0 +1,244 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://assets/Pokemon Classic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/objects/dialog_box_small.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/dialog_box_big.png" type="Texture" id=3]
+[ext_resource path="res://scripts/dialogue/dialog_box.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/fall_sfx.wav" type="AudioStream" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 288, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 384, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 480, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 576, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 672, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 768, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 864, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 960, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 1056, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 64, 32 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "big",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "small",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=22]
+size = 5
+outline_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+use_mipmaps = true
+extra_spacing_bottom = -4
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=23]
+resource_name = "dialog_big"
+tracks/0/type = "value"
+tracks/0/path = NodePath("dialog_box_anim:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dialog_box_anim:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("text_big:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "dialog_small"
+tracks/0/type = "value"
+tracks/0/path = NodePath("dialog_box_anim2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dialog_box_anim2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("text_small:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+
+[node name="dialog" type="Node2D"]
+position = Vector2( -0.534012, 0.0541687 )
+script = ExtResource( 4 )
+
+[node name="dialog_box_anim" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 47.9001, -32.0309 )
+frames = SubResource( 21 )
+animation = "big"
+
+[node name="dialog_box_anim2" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 33.1507, -16.0292 )
+frames = SubResource( 21 )
+animation = "small"
+
+[node name="text_big" type="Label" parent="."]
+visible = false
+margin_left = 8.42422
+margin_top = -59.0484
+margin_right = 91.4242
+margin_bottom = -18.0484
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Your breath stinks! You need to go see the psychatrist and get your life figured out before you talk to me."
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text_small" type="Label" parent="."]
+visible = false
+margin_left = 11.1451
+margin_top = -30.7225
+margin_right = 59.1451
+margin_bottom = -5.72245
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Hey, have you heard of The Shaggs?"
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/dialog_big = SubResource( 23 )
+anims/dialog_small = SubResource( 24 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="dialog" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

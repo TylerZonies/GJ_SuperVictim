@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/17822__fosmosis__wind-planes.ogg-2a2dd27d4f1e732c310a77ce0344d6c6.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/17822__fosmosis__wind-planes.ogg"
+dest_files=[ "res://.import/17822__fosmosis__wind-planes.ogg-2a2dd27d4f1e732c310a77ce0344d6c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

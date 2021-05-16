@@ -6,6 +6,7 @@ var x_direction = 0
 var y_direction = 0
 var sprite_dir = 1
 
+
 const UP = Vector2(0,-1)
 const GROUND_SPEED = 5000
 onready var SPRITE = get_node("Sprite")
@@ -55,6 +56,7 @@ func move(direction, delta):
 func check_on_floor():
 	for raycast in floor_raycasts.get_children():
 		if raycast.is_colliding():
+
 			return true
 	return false
 
@@ -69,6 +71,7 @@ func sprite_dir(dir):
 func jump(delta):
 	if check_on_floor():
 		velocity.y = -jump_speed * delta
+		audio_player("jump_sfx")
 
 func set_fall_through(set):
 	print(set)
@@ -89,3 +92,10 @@ func push():   ## added push function for objects (i.e boxes n shit)
 			if collider.moveable == true:
 				print("i can move this box!")
 				collider.push_object(x_direction)
+		if collider.is_in_group("npc"):
+			collider.make_dialog()
+			print(collider)
+func audio_player(sfx_str):
+	var sound = get_node(str(sfx_str))
+	sound.playing = false
+	sound.playing = true
