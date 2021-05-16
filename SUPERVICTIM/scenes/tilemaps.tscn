@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
@@ -8,7 +8,13 @@
 [ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=7]
 [ext_resource path="res://assets/objects/billboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/car.gd" type="Script" id=9]
 [ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/chars/boston mike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/chars/girl_on_phone.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/chars/bartender.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/chars/Vato.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/chars/oboy.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -172,7 +178,7 @@ position = Vector2( 1.53648, 168.328 )
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -393200, 2, 0, -131072, 0, 0, -131064, 1, 0, -131033, 6, 0, -131024, 0, 0, 65592, 5, 0, 131101, 3, 0 )
+tile_data = PoolIntArray( -393200, 2, 0, -131072, 0, 0, -131064, 1, 0, -131033, 6, 0, -131024, 0, 0, 65592, 5, 0, 131096, 7, 0, 131101, 3, 0 )
 
 [node name="billboard" parent="." instance=ExtResource( 8 )]
 position = Vector2( 550.464, 15.672 )
@@ -200,7 +206,19 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( -327664, 3, 0, -327663, 3, 0, -327662, 3, 0, -327661, 3, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -131055, 3, 0, -131053, 3, 0, -131052, 3, 0, -131050, 3, 0, -131033, 3, 0, -131032, 3, 0, -131031, 3, 0, -131030, 3, 0, -131029, 3, 0, -131028, 3, 0, -131027, 3, 0, -131026, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 43, 3, 0, 44, 3, 0, 45, 3, 0, 65554, 3, 0, 65557, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 131120, 3, 0, 131121, 3, 0, 131122, 3, 0, 131123, 3, 0, 131124, 3, 0, 131125, 3, 0, 131126, 3, 0, 131127, 3, 0, 131131, 3, 0, 131132, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196637, 3, 0, 196638, 3, 0, 196639, 3, 0, 196640, 3, 0, 196666, 3, 0, 196669, 3, 0, 262145, 3, 0, 262146, 3, 0, 262149, 3, 0, 262150, 3, 0, 262193, 3, 0, 262194, 3, 0, 262197, 3, 0, 262198, 3, 0, 327693, 3, 0, 327694, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327701, 3, 0, 327702, 3, 0, 327736, 3, 0, 327737, 3, 0, 327742, 3, 0, 327743, 3, 0 )
+tile_data = PoolIntArray( -327664, 3, 0, -327663, 3, 0, -327662, 3, 0, -327661, 3, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -131055, 3, 0, -131053, 3, 0, -131052, 3, 0, -131050, 3, 0, -131033, 3, 0, -131032, 3, 0, -131031, 3, 0, -131030, 3, 0, -131029, 3, 0, -131028, 3, 0, -131027, 3, 0, -131026, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 43, 3, 0, 44, 3, 0, 45, 3, 0, 65554, 3, 0, 65557, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131096, 3, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 131120, 3, 0, 131121, 3, 0, 131122, 3, 0, 131123, 3, 0, 131124, 3, 0, 131125, 3, 0, 131126, 3, 0, 131127, 3, 0, 131131, 3, 0, 131132, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196637, 3, 0, 196638, 3, 0, 196639, 3, 0, 196640, 3, 0, 196666, 3, 0, 196669, 3, 0, 262145, 3, 0, 262146, 3, 0, 262149, 3, 0, 262150, 3, 0, 262193, 3, 0, 262194, 3, 0, 262197, 3, 0, 262198, 3, 0, 327693, 3, 0, 327694, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327701, 3, 0, 327702, 3, 0, 327736, 3, 0, 327737, 3, 0, 327742, 3, 0, 327743, 3, 0 )
+
+[node name="npcs" type="Node2D" parent="."]
+
+[node name="bartender" parent="npcs" instance=ExtResource( 13 )]
+
+[node name="oboy" parent="npcs" instance=ExtResource( 15 )]
+
+[node name="boston mike" parent="npcs" instance=ExtResource( 11 )]
+
+[node name="girl_on_phone" parent="npcs" instance=ExtResource( 12 )]
+
+[node name="Vato" parent="npcs" instance=ExtResource( 14 )]
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 293.25, 94.8601 )
@@ -214,10 +232,6 @@ limit_right = 1060
 
 [node name="Parrali" parent="." instance=ExtResource( 5 )]
 
-[node name="cars" type="Node2D" parent="."]
-
-[node name="Node2D" type="Node2D" parent="cars"]
-
 [node name="boxes" type="Node2D" parent="."]
 
 [node name="box" parent="boxes" instance=ExtResource( 10 )]
@@ -227,7 +241,16 @@ position = Vector2( 550.464, 23.672 )
 position = Vector2( 566.464, 7.672 )
 
 [node name="box4" parent="boxes" instance=ExtResource( 10 )]
-position = Vector2( 454.464, 87.672 )
+position = Vector2( 454.464, 23.672 )
 
 [node name="box2" parent="boxes" instance=ExtResource( 10 )]
 position = Vector2( 566.464, 23.672 )
+
+[node name="cars" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="car_right" type="Position2D" parent="cars"]
+position = Vector2( 1134.46, 119.672 )
+
+[node name="car_left" type="Position2D" parent="cars"]
+position = Vector2( -97.5365, 159.672 )
