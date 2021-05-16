@@ -17,7 +17,7 @@ func _process(delta):
 		time += 1
 	else:
 		time = 0
-		var random = randi()%3
+		var random = randi()%4
 		var direction = randi()%2
 		var car = load("res://assets/objects/car.tscn")
 		car = car.instance()
