@@ -7,7 +7,4 @@ func _ready():
 	$one_way_collision.visible = false
 	 
 func level_complete():
-	var level_complete = load("res://scenes/level_complete.tscn")
-	level_complete = level_complete.instance()
-	add_child(level_complete)
-	$player.controls_disabled = true
+	SceneChanger.change_scene("res://levels/world1/world1_2.tscn")

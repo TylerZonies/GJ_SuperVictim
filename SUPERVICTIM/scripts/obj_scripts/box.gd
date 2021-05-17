@@ -32,7 +32,7 @@ func _ready():
 	self.add_to_group("moveable")
 	raycasts = [cast_right, cast_left, cast_up]
 func _process(delta):
-	if !_is_moving():
+	if !_is_moving() && obj_moved:
 		apply_gravity(delta)
 		
 		
@@ -53,6 +53,7 @@ func push_object(dir, pushed = false):
 						#print(collision.obj)
 						#print('~~~~~~~~~~~~~~~~~~~~~~~~~~')
 						collision.obj.move(dir)
+						
 						move(dir)
 						audio_player("roll_sfx")
 					
@@ -63,6 +64,7 @@ func move(dir):
 	var new_dir = Vector2(position.x + (dir * 16), position.y)
 	new_pos = new_dir
 	direction = dir
+	obj_moved = true
 
 func _is_moving():
 	if new_pos != Vector2.ZERO:

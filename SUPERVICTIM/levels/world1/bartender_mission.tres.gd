@@ -33,6 +33,7 @@ func check_mission():
 		dialogs = secondary_dialogs
 		index = 0
 		mission_complete = true
+		player.mission_completed = true
 		player.items_held.append("oboy_ticket")
 		$ooo.playing = true
 func notify():
