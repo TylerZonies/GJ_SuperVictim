@@ -16,6 +16,7 @@ onready var SPRITE = get_node("Sprite")
 onready var platform_detector = get_node("platform_detector")
 onready var floor_raycasts = get_node("floor_raycasts")
 onready var side_raycast = get_node("object_detector")
+onready var walk_sfx = get_node("walk_sfx")
 func _physics_process(delta):
 	if !controls_disabled:
 		get_input(delta)
@@ -96,6 +97,7 @@ func push():   ## added push function for objects (i.e boxes n shit)
 			if collider.moveable == true:
 				print("i can move this box!")
 				collider.push_object(x_direction)
+				SPRITE.play("push")
 		if collider.is_in_group("npc"):
 			collider.make_dialog()
 			start_timer()
@@ -117,11 +119,15 @@ func item_acquired(item_node):
 	
 	start_timer()
 	SPRITE.play("item_obtain")
+	
+func _has_item(item:String):
+	if items_held.has(item):
+		return true
 func audio_player(sfx_str):
 	var sound = get_node(str(sfx_str))
+	walk_sfx.playing = false
 	sound.playing = false
 	sound.playing = true
-
 func start_timer():
 		x_direction = 0
 		y_direction = 0

@@ -44,14 +44,18 @@ func _enter_state(old_state, new_state):
 		states.idle:
 			parent.SPRITE.animation = 'idle'
 			parent.set_fall_through(true)
+			parent.walk_sfx.playing = false
 		states.walk:
 			parent.sprite_dir(parent.x_direction)
 			print(parent.x_direction)
 			parent.SPRITE.animation = 'walk'
+			parent.walk_sfx.playing = true
 		states.jump:
 			parent.SPRITE.animation = 'jump'
+			parent.walk_sfx.playing = false
 		states.fall:
 			parent.SPRITE.animation = 'fall'
+			parent.walk_sfx.playing = false
 
 func _exit_state(old_state, new_state):
 	pass
