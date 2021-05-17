@@ -30,6 +30,7 @@ func check_mission():
 		dialogs = secondary_dialogs
 		index = 0
 		mission_complete = true
+		$oboy.playing = true
 func notify():
 	if mission_complete:
 		get_parent().get_parent().level_complete()

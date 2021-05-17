@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boombox_loop1.ogg-4602259eaec634ca3171163bdee88ce0.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/boombox_loop1.ogg"
+dest_files=[ "res://.import/boombox_loop1.ogg-4602259eaec634ca3171163bdee88ce0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
