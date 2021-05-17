@@ -31,4 +31,5 @@ func check_mission():
 		index = 0
 		mission_complete = true
 func notify():
-	get_parent().get_parent().level_complete()
+	if mission_complete:
+		get_parent().get_parent().level_complete()
