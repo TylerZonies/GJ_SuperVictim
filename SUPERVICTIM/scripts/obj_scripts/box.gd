@@ -10,7 +10,7 @@ var new_pos = Vector2.ZERO
 var direction = 0
 var fall_dir = 0
 
-var speed = 2
+var speed = 1
 ##############################################################
 
 var raycasts

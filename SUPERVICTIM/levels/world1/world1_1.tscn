@@ -426,7 +426,7 @@ position = Vector2( 648, 40 )
 [node name="flag_anim" type="AnimatedSprite" parent="texas_flag"]
 position = Vector2( -72, 168 )
 frames = SubResource( 12 )
-frame = 1
+frame = 10
 playing = true
 flip_h = true
 
@@ -444,7 +444,7 @@ texture = ExtResource( 10 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="billboard2"]
 frames = SubResource( 36 )
 animation = "mikesballs"
-frame = 2
+frame = 3
 playing = true
 
 [node name="background" type="TileMap" parent="."]
@@ -499,7 +499,7 @@ script = ExtResource( 17 )
 [node name="animation" type="AnimatedSprite" parent="npcs/bartender"]
 position = Vector2( 0, -8 )
 frames = SubResource( 56 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="StaticBody2D" parent="npcs/bartender" instance=ExtResource( 15 )]
@@ -514,7 +514,7 @@ position = Vector2( 640, 272 )
 script = ExtResource( 22 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 936, 128 )
+position = Vector2( 420.955, 24 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2( -318.522, -72 )

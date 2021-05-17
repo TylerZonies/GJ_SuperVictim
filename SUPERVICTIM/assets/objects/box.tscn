@@ -46,10 +46,11 @@ collision_mask = 8
 [node name="floorcast" type="RayCast2D" parent="box_obj"]
 position = Vector2( 0, -1.47157 )
 enabled = true
-cast_to = Vector2( 0, 10 )
+cast_to = Vector2( 0, 12 )
 collision_mask = 14
 
 [node name="roll_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = -12.652
+
 [connection signal="body_shape_entered" from="box_obj" to="." method="_on_box_obj_body_shape_entered"]
