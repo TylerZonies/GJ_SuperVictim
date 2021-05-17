@@ -20,6 +20,11 @@ onready var walk_sfx = get_node("walk_sfx")
 func _physics_process(delta):
 	if !controls_disabled:
 		get_input(delta)
+	else:
+		velocity = Vector2(0,0)
+		x_direction = 0
+		y_direction = 0
+		
 	apply_gravity(delta)
 	move_and_slide(velocity, UP)
 	
