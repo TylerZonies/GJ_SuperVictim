@@ -7,6 +7,8 @@ var y_direction = 0
 var sprite_dir = 1
 
 var controls_disabled = false
+var mission_completed = false
+
 
 var items_held = []
 
