@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tilesets/moving_cars.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -170,7 +171,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 16 )
 format = 1
-tile_data = PoolIntArray( 655360, 0, 0 )
+tile_data = PoolIntArray( 131101, 13, 0, 196629, 12, 0, 655360, 0, 0, 655368, 6, 0, 655377, 6, 0 )
 
 [node name="floor_tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -193,6 +194,7 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
 format = 1
+tile_data = PoolIntArray( 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0 )
 
 [node name="Parrali" parent="." instance=ExtResource( 6 )]
 
@@ -209,3 +211,11 @@ limit_bottom = 380
 
 [node name="cars" parent="." instance=ExtResource( 8 )]
 position = Vector2( 72, 192 )
+
+[node name="boxes" type="Node2D" parent="."]
+position = Vector2( 8, 0 )
+
+[node name="box" parent="boxes" instance=ExtResource( 9 )]
+position = Vector2( 368, 152 )
+
+[node name="npcs" type="Node2D" parent="."]
