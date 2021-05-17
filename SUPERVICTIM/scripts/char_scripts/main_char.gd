@@ -106,9 +106,9 @@ func push():   ## added push function for objects (i.e boxes n shit)
 				collider.push_object(x_direction)
 				SPRITE.play("push")
 		if collider.is_in_group("npc"):
-			collider.make_dialog()
-			start_timer()
 			SPRITE.play("wave")
+			collider.make_dialog()
+
 			print(collider)
 		if collider.is_in_group("item"):
 			item_acquired(collider)

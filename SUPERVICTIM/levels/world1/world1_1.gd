@@ -7,4 +7,4 @@ func _ready():
 	$one_way_collision.visible = false
 	 
 func level_complete():
-	SceneChanger.change_scene("res://levels/world1/world1_2.tscn")
+	SceneChanger.change_scene("res://levels/world1/cutscene1_1.tscn", "Later that evening...")

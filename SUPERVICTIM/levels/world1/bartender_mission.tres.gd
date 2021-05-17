@@ -20,6 +20,7 @@ func make_dialog():
 	if is_talking == false:
 		_rotate_dialog()
 		get_node("NPC").make_dialog(dialog, dialog_size)
+		player.start_timer()
 
 func _rotate_dialog():
 	if index < dialogs.size():
