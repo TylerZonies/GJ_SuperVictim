@@ -111,17 +111,17 @@ func push():   ## added push function for objects (i.e boxes n shit)
 
 			print(collider)
 		if collider.is_in_group("item"):
-			item_acquired(collider)
+			item_acquired(collider.item)
 			collider.queue_free()
 			
 
 func item_acquired(item_node):
 	var item_dialog = load("res://assets/objects/item_dialog.tscn")
 	item_dialog = item_dialog.instance()
-	item_dialog.item = str(item_node.item)
+	item_dialog.item = str(item_node)
 	item_dialog.position.y += -24
 	add_child(item_dialog)
-	items_held.append(item_node.item)
+	items_held.append(item_node)
 	print(items_held)
 	
 	start_timer()

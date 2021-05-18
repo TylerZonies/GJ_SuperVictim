@@ -16,13 +16,13 @@ func begin_cutscene():
 	$player.controls_disabled = true
 	dialog(oboy, "You did pretty darn well back there.")
 	yield(self, "dialog_finished")
-	dialog(oboy, "There's someone that might be interested in some help. I know you are new around here.")
+	dialog(oboy, "My dog Tim needs some help.")
 	yield(self, "dialog_finished")
 	dialog(oboy, "I know you are interested in this offer. But it's gonna be some tough work.")
 	yield(self, "dialog_finished")
-	dialog(oboy, "Ahem... This fella is one of those types that think he the real boy.")
+	dialog(oboy, "Maybe if you do this job for me, I can show you to another fella.")
 	yield(self, "dialog_finished")
-	dialog_sound(oboy, "But we all know who the real boy is around this town. That's right. OoooO- Boy!", oboy.get_node("oboy"), 50)
+	dialog_sound(oboy, "Tough work requires tough pay, so I'll get you what you need in the mean time. OoooO- Boy!", oboy.get_node("oboy"), 50)
 	
 	yield(self, "dialog_finished")
 	

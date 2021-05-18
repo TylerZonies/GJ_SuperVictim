@@ -6,7 +6,8 @@ var obj_moved = false
 var obj_fell = false
 const UP = Vector2(0,-1)
 
-
+export var breakable = false
+export (String, "Skooner", "default", "Rosary") var item = "default"
 var new_pos = Vector2.ZERO
 var direction = 0
 var fall_dir = 0
@@ -35,6 +36,8 @@ onready var sprite = get_node("box_obj/box")
 func _ready():
 	self.add_to_group("moveable")
 	raycasts = [cast_right, cast_left, cast_up]
+	if breakable:
+		sprite.texture = load("res://assets/sprites/objects/wooden_box.png")
 func _process(delta):
 	if !_is_moving() && obj_moved:
 		apply_gravity(delta)
@@ -113,12 +116,23 @@ func check_double_push(dir):
 func check_on_floor():
 	if floor_cast.is_colliding():
 		sprite.rotation_degrees = int(sprite.rotation_degrees/90) * 90
+		if breakable:
+			if floor_cast.get_collider().name == "collision":
+				$AnimationPlayer.play("break")
+				yield(get_tree().create_timer(1),"timeout")
+				spawn_item()
 		return true
 
 	#else:
 		#moveable = false
 		#return false
-
+func spawn_item():
+	var object = load("res://assets/objects/item.tscn")
+	object = object.instance()
+	object.item = item
+	get_parent().add_child(object)
+	object.position = self.position
+	queue_free()
 func apply_gravity(delta):
 	pass
 	if !check_on_floor():
