@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Parallax_night.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/chars/fiddy.png" type="Texture" id=5]
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=7]
 [ext_resource path="res://assets/background.tres" type="TileSet" id=8]
@@ -13,6 +14,8 @@
 [ext_resource path="res://levels/world1/oboy_cutscene.tres.gd" type="Script" id=12]
 [ext_resource path="res://assets/sounds/night_sound_jespa.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/objects/level_exit.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/chars/npc_body.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/chars/NPC.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -169,6 +172,109 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 5/z_index = 0
 
+[sub_resource type="GDScript" id=9]
+script/source = "extends Node2D
+
+var dialog = \"Hey baby!\"
+var dialog_size = \"small\"
+var is_talking = false
+
+var dialogs = {1: [\"small\", \"Have you seen my guitar?\"], 
+2: [\"small\", \"Have you heard The Shaggs?\"], 
+3: [\"big\", \"This song sounds off. IS it in C?\"]}
+var index = 0
+func _ready():
+	add_to_group(\"npc\")
+
+func make_dialog():
+
+	if is_talking == false:
+		_rotate_dialog()
+		get_node(\"NPC\").make_dialog(dialog, dialog_size)
+
+func _rotate_dialog():
+	if index < dialogs.size():
+		index += 1
+	else:
+		index = 1
+	dialog_size = dialogs[index][0]
+	dialog = dialogs[index][1]
+"
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 768, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 832, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 576, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 640, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 704, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "fiddy_dance",
+"speed": 5.0
+} ]
+
 [node name="cutscene1_1" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -240,3 +346,19 @@ autoplay = true
 
 [node name="level_exit" parent="." instance=ExtResource( 14 )]
 position = Vector2( 952, 120 )
+
+[node name="default_npc" type="Node2D" parent="."]
+position = Vector2( 392, 280 )
+script = SubResource( 9 )
+
+[node name="animation" type="AnimatedSprite" parent="default_npc"]
+position = Vector2( 0, 8 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 24 )
+animation = "fiddy_dance"
+frame = 1
+playing = true
+
+[node name="StaticBody2D" parent="default_npc" instance=ExtResource( 15 )]
+
+[node name="NPC" parent="default_npc" instance=ExtResource( 16 )]

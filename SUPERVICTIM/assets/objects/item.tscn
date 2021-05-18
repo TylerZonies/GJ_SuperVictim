@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/item.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/objects/scooner.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/rosary.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Skooner",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "Rosary",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[node name="item" type="Node2D"]
+position = Vector2( 904, 120 )
+script = ExtResource( 1 )
+item = "Skooner"
+
+[node name="item_anim" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "Rosary"
+playing = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 6 )

@@ -8,9 +8,10 @@ onready var animation = $dialog_anim
 onready var vocal_c = $vocal_c
 onready var vocal_e = $vocal_e
 onready var vocal_o = $vocal_o
-
+var play_sound = false
+var sound = null
 var vox
-
+var sound_time = 2
 var dialog_completed = false
 var delete_text = false
 var text_speed = 0.02
@@ -53,6 +54,9 @@ func display_characters():
 		dialog_text.visible_characters += 1
 		vox[randi()%2].play()
 		yield(get_tree().create_timer(text_speed), "timeout")
+		if play_sound == true && dialog_text.visible_characters == sound_time:
+			play_sound()
+			play_sound = false
 		display_characters()
 	else:
 		emit_signal("string_displayed")
@@ -63,3 +67,5 @@ func remove_characters():
 		remove_characters()
 	else:
 		emit_signal("string_displayed")
+func play_sound():
+	sound.play()

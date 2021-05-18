@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Parallax_night.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/tilesets/moving_cars.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/objects/street_light.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=7]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=8]
@@ -222,7 +221,3 @@ limit_left = 0
 limit_top = -720
 limit_right = 1180
 limit_bottom = 380
-
-[node name="cars" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0.341176, 0.341176, 0.341176, 1 )
-position = Vector2( 72, 192 )

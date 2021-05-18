@@ -1,14 +1,54 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://assets/background.tres" type="TileSet" id=3]
-[ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=5]
-[ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/tilesets/moving_cars.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=2]
+[ext_resource path="res://scripts/TimeParallax.gd" type="Script" id=3]
+[ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/background.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/objects/street_light.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=8]
 [ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/prarie_background.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/dirtbg.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/dirtbgFLAT.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/night_sky.png" type="Texture" id=13]
+[ext_resource path="res://assets/objects/prariedogtown.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/chars/prairiedog.png" type="Texture" id=15]
+[ext_resource path="res://levels/world1/world1_2.gd" type="Script" id=16]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 15 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 15 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 15 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -33,7 +73,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=8]
 0/name = "collision_tiles.png 0"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 16 )
@@ -54,7 +94,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 0/z_index = 0
 1/name = "collision_tiles.png 1"
-1/texture = ExtResource( 4 )
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 16 )
@@ -75,7 +115,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 1/z_index = 0
 2/name = "collision_tiles.png 2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 16 )
@@ -96,7 +136,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 2/z_index = 0
 3/name = "collision_tiles2.png 3"
-3/texture = ExtResource( 5 )
+3/texture = ExtResource( 2 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 16, 16 )
@@ -117,7 +157,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 3/z_index = 0
 4/name = "collision_tiles2.png 4"
-4/texture = ExtResource( 5 )
+4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 16, 0, 16, 16 )
@@ -144,7 +184,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 4/z_index = 0
 5/name = "collision_tiles2.png 5"
-5/texture = ExtResource( 5 )
+5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 32, 0, 16, 16 )
@@ -165,28 +205,68 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 5/z_index = 0
 
-[node name="world_default" type="Node2D"]
+[node name="suburb_night" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="prairiedogtown" type="Sprite" parent="."]
+modulate = Color( 0.380392, 0.368627, 0.368627, 1 )
+position = Vector2( 488, 240 )
+texture = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 528, 265.397 )
+scale = Vector2( 0.587334, 0.587334 )
+frames = SubResource( 14 )
+animation = "stand"
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 493.522, 253.522 )
+scale = Vector2( 0.432466, 0.432466 )
+frames = SubResource( 14 )
+animation = "stand"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 453.904, 269.904 )
+scale = Vector2( 0.456334, 0.456334 )
+frames = SubResource( 14 )
+animation = "stand"
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 456, 256 )
+scale = Vector2( 0.587334, 0.587334 )
+frames = SubResource( 14 )
+animation = "stand"
+playing = true
 
 [node name="background" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
+modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 16 )
 format = 1
-tile_data = PoolIntArray( 131101, 13, 0, 196629, 12, 0, 655360, 0, 0, 655368, 6, 0, 655377, 6, 0 )
+tile_data = PoolIntArray( 196640, 12, 0, 393236, 16, 0, 393241, 2, 0, 655390, 14, 0, 851981, 5, 0, 917528, 7, 0, 917532, 9, 0, 917536, 10, 0, 1048588, 11, 0, 1048593, 11, 0 )
 
 [node name="floor_tiles" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
+modulate = Color( 0.352941, 0.352941, 0.352941, 1 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 16 )
 cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( 1179648, 2, 0, 1179649, 0, 0, 1179650, 1, 0, 1179651, 2, 0, 1179652, 0, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 2, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 1, 0, 1179662, 2, 0, 1179663, 0, 0, 1179664, 1, 0, 1179665, 0, 0, 1179666, 1, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 1, 0, 1179671, 0, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 1, 0, 1179679, 1, 0, 1179680, 1, 0, 1179681, 1, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 1, 0, 1179687, 1, 0 )
 
 [node name="collision" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245229, 0, 0, 1245230, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245253, 0, 0, 1245254, 0, 0, 1245255, 0, 0, 1245256, 0, 0, 1245257, 0, 0, 1245258, 0, 0, 1245259, 0, 0, 1245260, 0, 0, 1245261, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245264, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 73, 0, 0, 65536, 0, 0, 65609, 0, 0, 131072, 0, 0, 131145, 0, 0, 196608, 0, 0, 196681, 0, 0, 262144, 0, 0, 262217, 0, 0, 327680, 0, 0, 327753, 0, 0, 393216, 0, 0, 393289, 0, 0, 458752, 0, 0, 458825, 0, 0, 524288, 0, 0, 524361, 0, 0, 589824, 0, 0, 589897, 0, 0, 655360, 0, 0, 655433, 0, 0, 720896, 0, 0, 720969, 0, 0, 786432, 0, 0, 786505, 0, 0, 851968, 0, 0, 852041, 0, 0, 917504, 0, 0, 917577, 0, 0, 983040, 0, 0, 983113, 0, 0, 1048576, 0, 0, 1048649, 0, 0, 1114112, 0, 0, 1114185, 0, 0, 1179648, 0, 0, 1179721, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245229, 0, 0, 1245230, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245253, 0, 0, 1245254, 0, 0, 1245255, 0, 0, 1245256, 0, 0, 1245257, 0, 0, 1245258, 0, 0, 1245259, 0, 0, 1245260, 0, 0, 1245261, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245264, 0, 0 )
 
 [node name="one_way_collision" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
@@ -194,11 +274,64 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
 format = 1
-tile_data = PoolIntArray( 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0 )
+tile_data = PoolIntArray( 262176, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262180, 3, 0, 262181, 3, 0, 262182, 3, 0, 262183, 3, 0, 262184, 3, 0, 262185, 3, 0, 262186, 3, 0, 262187, 3, 0, 458802, 3, 0, 458803, 3, 0, 458804, 3, 0, 458805, 3, 0, 458806, 3, 0, 458807, 3, 0, 458808, 3, 0, 458809, 3, 0, 524352, 3, 0, 524353, 3, 0, 524354, 3, 0, 524355, 3, 0, 524356, 3, 0, 524357, 3, 0, 524358, 3, 0, 524359, 3, 0, 524360, 3, 0, 524361, 3, 0, 524362, 3, 0, 524363, 3, 0, 524364, 3, 0, 524365, 3, 0, 524366, 3, 0, 524367, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655411, 3, 0, 655413, 3, 0, 655414, 3, 0, 655416, 3, 0, 720929, 3, 0, 720930, 3, 0, 720931, 3, 0, 720932, 3, 0, 720933, 3, 0, 720934, 3, 0, 720935, 3, 0, 720936, 3, 0, 720937, 3, 0, 720938, 3, 0, 720957, 3, 0, 720958, 3, 0, 786461, 3, 0, 786462, 3, 0, 786463, 3, 0, 786464, 3, 0, 786465, 3, 0, 851989, 3, 0, 851990, 3, 0, 852020, 3, 0, 852023, 3, 0, 917552, 3, 0, 917553, 3, 0, 917554, 3, 0, 917555, 3, 0, 983066, 3, 0, 983067, 3, 0, 983068, 3, 0, 983069, 3, 0, 983070, 3, 0, 983071, 3, 0, 983072, 3, 0, 983083, 3, 0, 983084, 3, 0 )
 
-[node name="Parrali" parent="." instance=ExtResource( 6 )]
+[node name="street_light" parent="." instance=ExtResource( 6 )]
 
-[node name="player" parent="." instance=ExtResource( 7 )]
+[node name="street_light2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 238.386, 7.72436 )
+
+[node name="street_light3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 449.529, 8.61526 )
+
+[node name="street_light4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 665.127, 5.94256 )
+
+[node name="Parrali" type="Node" parent="."]
+
+[node name="TimeParallax" type="ParallaxBackground" parent="Parrali"]
+offset = Vector2( 100, 0 )
+transform = Transform2D( 1, 0, 0, 1, 100, 0 )
+scroll_ignore_camera_zoom = true
+script = ExtResource( 3 )
+
+[node name="clouds" type="ParallaxLayer" parent="Parrali/TimeParallax"]
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parrali/TimeParallax/clouds"]
+position = Vector2( 524, 144 )
+texture = ExtResource( 13 )
+
+[node name="hills" type="ParallaxBackground" parent="Parrali"]
+scroll_ignore_camera_zoom = true
+
+[node name="hills" type="ParallaxLayer" parent="Parrali/hills"]
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parrali/hills/hills"]
+modulate = Color( 0.164706, 0.156863, 0.156863, 0.317647 )
+position = Vector2( 35.636, 292.215 )
+texture = ExtResource( 11 )
+
+[node name="Sprite2" type="Sprite" parent="Parrali/hills/hills"]
+modulate = Color( 0.294118, 0.282353, 0.282353, 0.4 )
+position = Vector2( -40.363, 353.177 )
+texture = ExtResource( 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Parrali"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parrali/ParallaxBackground"]
+position = Vector2( -0.374573, 0 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parrali/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.337255, 0.337255, 0.337255, 1 )
+position = Vector2( 312.375, 224 )
+texture = ExtResource( 10 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.423529, 0.423529, 0.423529, 1 )
+position = Vector2( 288, 280 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2( -472.696, -67.0375 )
@@ -209,13 +342,10 @@ limit_top = -720
 limit_right = 1180
 limit_bottom = 380
 
-[node name="cars" parent="." instance=ExtResource( 8 )]
-position = Vector2( 72, 192 )
+[node name="box" parent="." instance=ExtResource( 9 )]
+position = Vector2( 440, 298.114 )
 
-[node name="boxes" type="Node2D" parent="."]
-position = Vector2( 8, 0 )
-
-[node name="box" parent="boxes" instance=ExtResource( 9 )]
-position = Vector2( 368, 152 )
-
-[node name="npcs" type="Node2D" parent="."]
+[node name="box2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 520, 232 )
+breakable = true
+item = "Rosary"

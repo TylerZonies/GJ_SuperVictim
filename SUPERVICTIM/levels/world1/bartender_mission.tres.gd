@@ -35,6 +35,7 @@ func check_mission():
 		index = 0
 		mission_complete = true
 		player.mission_completed = true
+		player.item_acquired("# Number")
 		player.items_held.append("oboy_ticket")
 		$ooo.playing = true
 func notify():

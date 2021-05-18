@@ -30,5 +30,4 @@ func _on_Timer_timeout():
 		get_parent().is_talking = false
 		
 	else:
-		get_parent().notify()
 		queue_free()
