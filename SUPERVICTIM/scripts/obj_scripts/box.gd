@@ -3,6 +3,7 @@ extends Node2D
 var moveable = true
 var velocity = Vector2(0,0)
 var obj_moved = false
+var obj_fell = false
 const UP = Vector2(0,-1)
 
 
@@ -10,9 +11,12 @@ var new_pos = Vector2.ZERO
 var direction = 0
 var fall_dir = 0
 
-var speed = 1
+var speed = 4
+var speed_mod = 2
+var colliders = []
 ##############################################################
-
+var tick_time = 400
+var tick = 0
 var raycasts
 
 
@@ -34,9 +38,18 @@ func _ready():
 func _process(delta):
 	if !_is_moving() && obj_moved:
 		apply_gravity(delta)
+	else:
+		tick(delta)
 		
 		
 ##############################################################
+func tick(delta):
+	if tick == 1:
+		speed = 0
+	else:
+		tick = 0
+		speed = speed_mod
+		
 func push_object(dir, pushed = false):
 	var collisions = check_collider()
 	if collisions.size() == 0:
@@ -69,15 +82,18 @@ func move(dir):
 func _is_moving():
 	if new_pos != Vector2.ZERO:
 		if position != new_pos:
-			position.x += speed * direction
-			position.y += speed * fall_dir
-			sprite.rotation_degrees += 5 * speed
-			moveable = false
+			if position.x != new_pos.x:
+				position.x += speed * direction
+			elif !check_on_floor():
+				position.y += speed * fall_dir
+				sprite.rotation_degrees += 2 * speed
+			moveable = true
 			return true
 		else:
 			new_pos = Vector2.ZERO
 			direction = 0
 			fall_dir = 0
+
 			moveable = true
 			
 			return false
@@ -86,7 +102,6 @@ func check_double_push(dir):
 	
 	var my_bool = true
 	var collisions = check_collider()
-	
 	for collision in collisions:
 		if collision.dir == "up" or collision.dir == dir:
 			my_bool = false
@@ -97,7 +112,7 @@ func check_double_push(dir):
 
 func check_on_floor():
 	if floor_cast.is_colliding():
-		sprite.rotation_degrees = 90
+		sprite.rotation_degrees = int(sprite.rotation_degrees/90) * 90
 		return true
 
 	#else:
@@ -109,6 +124,7 @@ func apply_gravity(delta):
 	if !check_on_floor():
 		new_pos = Vector2(position.x, position.y + 16)
 		fall_dir = 1
+		obj_fell = true
 #		if velocity.y < max_fall_speed:
 #			velocity.y += fall_speed * delta
 #		else:

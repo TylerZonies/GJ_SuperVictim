@@ -94,17 +94,17 @@ region = Rect2( 0, 0, 16, 15 )
 atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 16, 15 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 15, 16, 15 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 16, 15 )
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 19 ), SubResource( 18 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -140,6 +140,7 @@ __meta__ = {
 [node name="next" type="AnimatedSprite" parent="."]
 position = Vector2( 34.9628, 26.7733 )
 frames = SubResource( 20 )
+frame = 2
 playing = true
 
 [node name="dialog_open" type="AudioStreamPlayer2D" parent="."]

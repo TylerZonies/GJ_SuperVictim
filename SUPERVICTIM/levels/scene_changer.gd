@@ -8,6 +8,7 @@ onready var world_text = $world_text
 onready var vox_a = $vox_a
 onready var vox_b = $vox_b
 onready var vox_c = $vox_c
+onready var sprite = $sprite
 var vox
 func _ready():
 	world_text.visible_characters = 0
@@ -19,7 +20,6 @@ func change_scene(path,string, delay = 0.5):
 	yield(get_tree().create_timer(delay), "timeout")
 	animation_player.play("fade")
 	yield(animation_player, "animation_finished")
-
 	assert(get_tree().change_scene(path) == OK)
 	display_characters()
 	yield(self, "string_displayed")

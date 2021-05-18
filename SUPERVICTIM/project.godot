@@ -28,6 +28,10 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://levels/scene_changer.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=640

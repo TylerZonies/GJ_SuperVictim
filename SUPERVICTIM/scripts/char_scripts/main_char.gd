@@ -1,13 +1,13 @@
 extends KinematicBody2D
 var velocity = Vector2(0,0)
 var fall_speed = 350
-var jump_speed = 11000
+var jump_speed = 10750
 var x_direction = 0
 var y_direction = 0
 var sprite_dir = 1
 
 var controls_disabled = false
-var mission_completed = false
+var mission_completed = true
 
 
 var items_held = []
