@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/prarie_dog3.wav-98481944f28d9ffab34ceb5a829baa3c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/prarie_dog3.wav"
+dest_files=[ "res://.import/prarie_dog3.wav-98481944f28d9ffab34ceb5a829baa3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
