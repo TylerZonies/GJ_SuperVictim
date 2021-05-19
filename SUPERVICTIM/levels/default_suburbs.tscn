@@ -1,168 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/collision_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/street_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/background.tres" type="TileSet" id=3]
-[ext_resource path="res://assets/sprites/tiles/collision_tiles.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/tiles/collision_tiles2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/collsion_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tilesets/moving_cars.tscn" type="PackedScene" id=8]
-
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 16, 16, 0, 16, 16 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 1.28942, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 0, 16, 16, 0, 16, 16, 16, 16, 0, 16 )
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 0, 16, 0, 16, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
-
-[sub_resource type="TileSet" id=8]
-0/name = "collision_tiles.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "collision_tiles.png 1"
-1/texture = ExtResource( 4 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 16, 0, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 2 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "collision_tiles.png 2"
-2/texture = ExtResource( 4 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 32, 0, 16, 16 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 3 )
-2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-3/name = "collision_tiles2.png 3"
-3/texture = ExtResource( 5 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 16, 16 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape = SubResource( 4 )
-3/shape_one_way = true
-3/shape_one_way_margin = 1.0
-3/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": true,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-3/z_index = 0
-4/name = "collision_tiles2.png 4"
-4/texture = ExtResource( 5 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 16, 0, 16, 16 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 5 )
-4/shape_one_way = true
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": true,
-"one_way_margin": 1.0,
-"shape": SubResource( 5 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-4/z_index = 0
-5/name = "collision_tiles2.png 5"
-5/texture = ExtResource( 5 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 32, 0, 16, 16 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 7 )
-5/shape_one_way = true
-5/shape_one_way_margin = 1.0
-5/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": true,
-"one_way_margin": 1.0,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-5/z_index = 0
 
 [node name="world_default" type="Node2D"]
 
@@ -170,7 +14,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 16 )
 format = 1
-tile_data = PoolIntArray( 655360, 0, 0 )
+tile_data = PoolIntArray( 851968, 5, 0 )
 
 [node name="floor_tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -188,7 +32,7 @@ format = 1
 tile_data = PoolIntArray( 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245229, 0, 0, 1245230, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245253, 0, 0, 1245254, 0, 0, 1245255, 0, 0, 1245256, 0, 0, 1245257, 0, 0, 1245258, 0, 0, 1245259, 0, 0, 1245260, 0, 0, 1245261, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245264, 0, 0 )
 
 [node name="one_way_collision" type="TileMap" parent="."]
-tile_set = SubResource( 8 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
@@ -199,7 +43,7 @@ format = 1
 [node name="player" parent="." instance=ExtResource( 7 )]
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2( -472.696, -67.0375 )
+position = Vector2( -464.696, -67.0375 )
 anchor_mode = 0
 current = true
 limit_left = 0
@@ -209,3 +53,5 @@ limit_bottom = 380
 
 [node name="cars" parent="." instance=ExtResource( 8 )]
 position = Vector2( 72, 192 )
+
+[node name="boxes" type="Node2D" parent="."]

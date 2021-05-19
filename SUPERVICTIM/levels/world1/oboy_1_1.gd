@@ -7,7 +7,7 @@ onready var player = get_parent().get_parent().get_node("player")
 var dialogs = {1: ["small", "Whassup."], 
 2: ["big", "There's a gal at Skooners that I certainly lament. GBO and Buc-ee feel the same."], 
 3: ["small", "O-BBBBOOOY!"]}
-var secondary_dialogs = {1: ["big", "So, you have her number.. Hmmm.. well done. G-BO can really use this to gain infamy in this city!"] }
+var secondary_dialogs = {1: ["big", "So.. you found my Skooner. There's some more folk that need some help, but here's some money for acquiring this."] }
 var index = 0
 func _ready():
 	add_to_group("npc")
@@ -27,8 +27,9 @@ func _rotate_dialog():
 	dialog_size = dialogs[index][0]
 	dialog = dialogs[index][1]
 func check_mission():
-	if player._has_item("oboy_ticket") && !mission_complete:
+	if player._has_item("Skooner") && !mission_complete:
 		dialogs = secondary_dialogs
+		player.item_acquired("$50")
 		index = 0
 		mission_complete = true
 		$oboy.playing = true

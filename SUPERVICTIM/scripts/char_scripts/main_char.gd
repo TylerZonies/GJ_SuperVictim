@@ -1,11 +1,11 @@
 extends KinematicBody2D
 var velocity = Vector2(0,0)
-var fall_speed = 365 # one for every day
+var fall_speed = 362 # one for every day
 #When falling - player can reach x+6 y-1
 #X + 7 y - 3
 #X + 7, y-5
 # it is certain that the player can fall a maximum x of 9
-var jump_speed = 9150
+var jump_speed = 9800
 #Player can jump x + 4, y + 2
 #Player can jump x + 5, y+ 1
 #Player can jump x + 6, y = 0
