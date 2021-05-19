@@ -1,7 +1,14 @@
 extends KinematicBody2D
 var velocity = Vector2(0,0)
-var fall_speed = 350
-var jump_speed = 10750
+var fall_speed = 365 # one for every day
+#When falling - player can reach x+6 y-1
+#X + 7 y - 3
+#X + 7, y-5
+# it is certain that the player can fall a maximum x of 9
+var jump_speed = 9150
+#Player can jump x + 4, y + 2
+#Player can jump x + 5, y+ 1
+#Player can jump x + 6, y = 0
 var x_direction = 0
 var y_direction = 0
 var sprite_dir = 1
@@ -35,7 +42,7 @@ func get_input(delta):
 	var LEFT = Input.is_action_pressed('left')
 	var RIGHT = Input.is_action_pressed('right')
 	var UP = Input.is_action_pressed('up')
-	var DOWN = Input.is_action_pressed('down')
+	var DOWN = Input.is_action_just_pressed('down')
 	var PUSH = Input.is_action_just_pressed("push")
 	x_direction = -int(LEFT) + int(RIGHT)
 	y_direction = -int(DOWN) + int(UP)

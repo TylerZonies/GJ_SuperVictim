@@ -356,7 +356,6 @@ position = Vector2( 0, 8 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 24 )
 animation = "fiddy_dance"
-frame = 2
 playing = true
 
 [node name="StaticBody2D" parent="default_npc" instance=ExtResource( 15 )]
