@@ -3,7 +3,7 @@ var dialog = ""
 var size = ""
 var time = 0
 var is_deleting = false
-
+signal dialog_finished()
 func _ready():
 	get_parent().is_talking = true
 	match size:
@@ -30,4 +30,5 @@ func _on_Timer_timeout():
 		get_parent().is_talking = false
 		
 	else:
+		emit_signal("dialog_finished")
 		queue_free()

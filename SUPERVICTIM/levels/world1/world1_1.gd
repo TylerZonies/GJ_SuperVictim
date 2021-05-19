@@ -1,10 +1,19 @@
 extends Node2D
-var controls_disabled = false
 
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	$collision.visible = false
-	$one_way_collision.visible = false
-	 
-func level_complete():
-	SceneChanger.change_scene("res://levels/world1/cutscene1_1.tscn", "Later that evening...")
+	change_collider_tiles()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+func change_collider_tiles():
+	var tile_map = $one_way_collision
+	for i in tile_map.get_used_cells():
+		tile_map.set_cellv(i, 6)

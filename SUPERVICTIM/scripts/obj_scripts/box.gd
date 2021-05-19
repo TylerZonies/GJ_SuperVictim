@@ -1,6 +1,6 @@
 extends Node2D
 
-var moveable = true
+export var moveable = true
 var velocity = Vector2(0,0)
 var obj_moved = false
 var obj_fell = false

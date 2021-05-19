@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/TimeParallax.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/cloud_parralax.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/dirtbg.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/dirtbgFLAT.png" type="Texture" id=4]
+[ext_resource path="res://assets/prarie_background.png" type="Texture" id=5]
 
 [node name="Parrali" type="Node"]
 
@@ -35,3 +36,12 @@ texture = ExtResource( 3 )
 modulate = Color( 0.576471, 0.294118, 0.294118, 0.4 )
 position = Vector2( -40.363, 353.177 )
 texture = ExtResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 318.502, 228.976 )
+texture = ExtResource( 5 )
