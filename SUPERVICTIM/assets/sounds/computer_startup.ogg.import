@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/computer_startup.ogg-19d57703b2f62f1d69aa2dfab1924c0a.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/computer_startup.ogg"
+dest_files=[ "res://.import/computer_startup.ogg-19d57703b2f62f1d69aa2dfab1924c0a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

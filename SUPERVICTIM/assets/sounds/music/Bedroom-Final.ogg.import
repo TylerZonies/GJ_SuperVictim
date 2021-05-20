@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bedroom-Final.ogg-e2e62cb69e9baa47f2a8c4bab0c7278f.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/music/Bedroom-Final.ogg"
+dest_files=[ "res://.import/Bedroom-Final.ogg-e2e62cb69e9baa47f2a8c4bab0c7278f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

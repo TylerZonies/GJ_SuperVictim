@@ -7,9 +7,14 @@ var y_direction = 0
 var sprite_dir = 1
 
 var controls_disabled = false
+<<<<<<< Updated upstream
+=======
+var mission_completed = true
+var camera_shake_speed = 0
+>>>>>>> Stashed changes
 
 var items_held = []
-
+var total_time = 0
 const UP = Vector2(0,-1)
 const GROUND_SPEED = 5000
 onready var SPRITE = get_node("Sprite")
@@ -17,6 +22,7 @@ onready var platform_detector = get_node("platform_detector")
 onready var floor_raycasts = get_node("floor_raycasts")
 onready var side_raycast = get_node("object_detector")
 onready var walk_sfx = get_node("walk_sfx")
+onready var camera = get_node("PlayerCamera")
 func _physics_process(delta):
 	if !controls_disabled:
 		get_input(delta)
@@ -27,7 +33,8 @@ func _physics_process(delta):
 		
 	apply_gravity(delta)
 	move_and_slide(velocity, UP)
-	
+	shake_camera(delta)
+	total_time += delta
 
 func get_input(delta):
 	var LEFT = Input.is_action_pressed('left')
@@ -112,7 +119,9 @@ func push():   ## added push function for objects (i.e boxes n shit)
 			item_acquired(collider)
 			collider.queue_free()
 			
-
+func shake_camera(delta):
+	camera.position.x = cos(total_time * camera_shake_speed) * 10
+	
 func item_acquired(item_node):
 	var item_dialog = load("res://assets/objects/item_dialog.tscn")
 	item_dialog = item_dialog.instance()

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=87 format=2]
+=======
+[gd_scene load_steps=86 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main_char.tscn" type="PackedScene" id=2]
@@ -13,6 +17,7 @@
 [ext_resource path="res://levels/world1/world1_1.gd" type="Script" id=11]
 [ext_resource path="res://assets/objects/billboard.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/objects/box.tscn" type="PackedScene" id=13]
+<<<<<<< Updated upstream
 [ext_resource path="res://assets/sprites/chars/bartender.png" type="Texture" id=14]
 [ext_resource path="res://assets/chars/npc_body.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/chars/NPC.tscn" type="PackedScene" id=16]
@@ -173,11 +178,131 @@ region = Rect2( 576, 0, 64, 64 )
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+=======
+[ext_resource path="res://assets/sprites/objects/tejas_billboard.png" type="Texture" id=14]
+[ext_resource path="res://assets/objects/item.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/collsion_tileset.tres" type="TileSet" id=16]
+[ext_resource path="res://assets/chars/girl_on_phone.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/objects/billboard.gd" type="Script" id=18]
+[ext_resource path="res://assets/sprites/objects/mikesballs_ad.png" type="Texture" id=19]
+[ext_resource path="res://assets/chars/npc_body.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/chars/oboy.tscn" type="PackedScene" id=21]
+[ext_resource path="res://levels/world1/oboy_1_1.gd" type="Script" id=22]
+[ext_resource path="res://assets/chars/NPC.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/sounds/oboy_yell.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/sprites/chars/NPC11_-_Church_Woman-Sheet.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/objects/boombox.png" type="Texture" id=26]
+[ext_resource path="res://assets/sounds/boombox_loop1.ogg" type="AudioStream" id=27]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 288, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 480, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 576, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 672, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 768, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 864, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 960, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 1056, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 1152, 0, 96, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 19 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 19 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 19 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 19 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 19 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 19 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 19 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 19 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 19 )
+region = Rect2( 576, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 96, 32 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+>>>>>>> Stashed changes
 "loop": true,
 "name": "billboard",
 "speed": 5.0
 }, {
+<<<<<<< Updated upstream
 "frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+=======
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+>>>>>>> Stashed changes
 "loop": true,
 "name": "mikesballs",
 "speed": 5.0
@@ -309,11 +434,18 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 "shape": SubResource( 41 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
+<<<<<<< Updated upstream
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 42 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+=======
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "tejas",
+"speed": 5.0
+>>>>>>> Stashed changes
 } ]
 4/z_index = 0
 5/name = "collision_tiles2.png 5"
@@ -338,6 +470,7 @@ points = PoolVector2Array( 0, 0, 0, 0, 16, 16, 0, 16 )
 } ]
 5/z_index = 0
 
+<<<<<<< Updated upstream
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 32, 64 )
@@ -405,6 +538,68 @@ region = Rect2( 32, 0, 16, 16 )
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
 "frames": [  ],
+=======
+[sub_resource type="DynamicFont" id=26]
+extra_spacing_bottom = -11
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 9
+extra_spacing_bottom = -11
+font_data = ExtResource( 8 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 26 )
+region = Rect2( 32, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 26 )
+region = Rect2( 64, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 26 )
+region = Rect2( 96, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 26 )
+region = Rect2( 128, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 26 )
+region = Rect2( 160, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 26 )
+region = Rect2( 192, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 26 )
+region = Rect2( 224, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 26 )
+region = Rect2( 256, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 26 )
+region = Rect2( 288, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 26 )
+region = Rect2( 320, 0, 32, 20 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 26 )
+region = Rect2( 352, 0, 32, 20 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+>>>>>>> Stashed changes
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -415,6 +610,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
+<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id=61]
 
 [node name="world1_1" type="Node2D"]
@@ -422,6 +618,146 @@ script = ExtResource( 11 )
 
 [node name="texas_flag" type="Node2D" parent="."]
 position = Vector2( 648, 40 )
+=======
+[sub_resource type="GDScript" id=58]
+script/source = "extends Node2D
+var dialog = \"Hey baby!\"
+var dialog_size = \"small\"
+var is_talking = false
+var mission_complete = false
+onready var player = get_parent().get_parent().get_node(\"player\")
+var dialogs = {1: [\"small\", \"I can't find my cross.\"], 
+2: [\"big\", \"It was my husband's cross, and will never see it again.\"], 
+3: [\"big\", \"We all due for God's wrath.\"]}
+
+var index = 0
+func _ready():
+	add_to_group(\"npc\")
+
+func make_dialog():
+	if !check_mission():
+		if is_talking == false:
+			_rotate_dialog()
+			get_node(\"NPC\").make_dialog(dialog, dialog_size)
+			player.start_timer()
+
+func _rotate_dialog():
+	if index < dialogs.size():
+		index += 1
+	else:
+		index = 1
+	dialog_size = dialogs[index][0]
+	dialog = dialogs[index][1]
+func check_mission():
+	if player._has_item(\"Mace\") && !mission_complete:
+		index = 0
+		mission_complete = true
+		DialogManager._create_dialog(self, \"OW. That hurt.. OW... Oh lord! Why today? Why today, lord! Please answer my prayers!\")
+		yield(DialogManager, \"finished\")
+		get_parent().get_parent().knock_box()
+		GlobalPlayer.shake_camera(20)
+		DialogManager._create_dialog(self, \"Oh lord. Please help me, all these days that I lament. Please answer my prayers.. Please... Oh lord.\")
+		yield(DialogManager, \"finished\")
+		return true
+		
+	else:
+		return false
+func notify():
+	pass
+"
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 25 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 25 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 25 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 25 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 25 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 25 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 25 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 25 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 25 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 25 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 25 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 25 )
+region = Rect2( 384, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 25 )
+region = Rect2( 416, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 25 )
+region = Rect2( 448, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 25 )
+region = Rect2( 480, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=57]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
+"loop": true,
+"name": "talking",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
+"name": "smiling",
+"speed": 5.0
+} ]
+
+[node name="world_default" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="BACKGROUND_FADE" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.290196 )
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 262331, 12, 0, 655380, 16, 0, 655521, 536870928, 0, 1114202, 14, 0, 1179791, 15, 0, 2883812, 8, 0 )
+>>>>>>> Stashed changes
 
 [node name="flag_anim" type="AnimatedSprite" parent="texas_flag"]
 position = Vector2( -72, 168 )
@@ -441,32 +777,143 @@ script = ExtResource( 18 )
 position = Vector2( 0.955276, 48.4347 )
 texture = ExtResource( 10 )
 
+<<<<<<< Updated upstream
 [node name="AnimatedSprite" type="AnimatedSprite" parent="billboard2"]
 frames = SubResource( 36 )
 animation = "mikesballs"
 frame = 4
 playing = true
 
+=======
+[node name="AnimatedSprite" type="AnimatedSprite" parent="billboard3"]
+frames = SubResource( 25 )
+animation = "tejas"
+playing = true
+
+[node name="background2" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65573, 26, 0, 65643, 20, 0, 131114, 26, 0, 131129, 21, 0, 393281, 2, 0, 393370, 536870928, 0, 524410, 27, 0, 524415, 27, 0, 524420, 27, 0, 524425, 536870939, 0, 851968, 5, 0, 852011, 5, 0, 917596, 3, 0, 983155, 536870940, 0, 983176, 28, 0 )
+
+[node name="billboard" parent="." instance=ExtResource( 9 )]
+position = Vector2( 616, 112 )
+
+[node name="billboard2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1648, 16 )
+
+>>>>>>> Stashed changes
 [node name="background" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 32, 16 )
 format = 1
+<<<<<<< Updated upstream
 tile_data = PoolIntArray( 393227, 2, 0, 458771, 8, 0, 655360, 0, 0, 655365, 1, 0, 655387, 6, 0, 655395, 1, 0, 720927, 4, 0, 917500, 5, 0, 851976, 5, 0, 851982, 5, 0, 851992, 5, 0, 917522, 3, 0, 917527, 7, 0, 1048591, 11, 0, 1048602, 11, 0, 1179663, 11, 0, 1245199, 11, 0 )
+=======
+tile_data = PoolIntArray( -65522, 22, 0, 262168, 24, 0, 327698, 19, 0, 327751, 536870931, 0, 458801, 23, 0, 655370, 1, 0, 851968, 5, 0, 917514, 25, 0, 917544, 26, 0, 917546, 26, 0, 917548, 26, 0, 917568, 7, 0, 983078, 25, 0, 1048639, 11, 0, 1048642, 11, 0 )
+>>>>>>> Stashed changes
 
 [node name="floor_tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 32, 16 )
 cell_tile_origin = 1
 format = 1
+<<<<<<< Updated upstream
 tile_data = PoolIntArray( 1245175, 0, 0, 1245176, 0, 0, 1245177, 0, 0, 1245178, 0, 0, 1245179, 0, 0, 1245180, 0, 0, 1245181, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1179648, 2, 0, 1179649, 0, 0, 1179650, 1, 0, 1179651, 2, 0, 1179652, 0, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 2, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 1, 0, 1179662, 2, 0, 1179663, 0, 0, 1179664, 1, 0, 1179665, 0, 0, 1179666, 1, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 1, 0, 1179671, 0, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 1, 0, 1179679, 1, 0, 1179680, 1, 0, 1179681, 1, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 1, 0, 1179687, 1, 0 )
+=======
+tile_data = PoolIntArray( 1179648, 2, 0, 1179649, 0, 0, 1179650, 1, 0, 1179651, 2, 0, 1179652, 0, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 2, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 1, 0, 1179662, 2, 0, 1179663, 0, 0, 1179664, 1, 0, 1179665, 0, 0, 1179666, 1, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 1, 0, 1179671, 0, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 1, 0, 1179679, 1, 0, 1179680, 2, 0, 1179681, 1, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 2, 0, 1179687, 1, 0, 1179688, 0, 0, 1179689, 0, 0, 1179690, 1, 0, 1179691, 0, 0, 1179692, 0, 0, 1179693, 1, 0, 1179694, 0, 0, 1179695, 0, 0, 1179696, 0, 0, 1179697, 0, 0, 1179698, 0, 0, 1179699, 1, 0, 1179700, 2, 0, 1179701, 0, 0, 1179702, 0, 0, 1179703, 0, 0, 1179704, 2, 0, 1179705, 0, 0, 1179706, 0, 0, 1179707, 2, 0, 1179708, 0, 0, 1179709, 1, 0, 1179710, 2, 0, 1179711, 0, 0, 1179712, 0, 0, 1179713, 1, 0, 1179714, 2, 0, 1179715, 1, 0, 1179716, 0, 0, 1179717, 0, 0, 1179718, 2, 0, 1179719, 1, 0, 1179720, 0, 0, 1179721, 0, 0, 1179722, 1, 0, 1179723, 2, 0, 1179724, 0, 0, 1179725, 1, 0, 1179726, 0, 0, 1179727, 2, 0, 1179728, 0, 0, 1179729, 0, 0, 1179730, 0, 0, 1179731, 0, 0, 1179732, 0, 0, 1179733, 0, 0, 1179734, 0, 0, 1179735, 0, 0, 1179736, 0, 0 )
+
+[node name="Guide" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Guide"]
+margin_left = 104.0
+margin_top = 312.0
+margin_right = 336.0
+margin_bottom = 338.0
+custom_fonts/font = SubResource( 26 )
+text = "Press UP to Jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Guide"]
+margin_left = 752.0
+margin_top = 320.0
+margin_right = 1108.0
+margin_bottom = 346.0
+custom_fonts/font = SubResource( 27 )
+text = "<- Walk Back to Start Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Guide"]
+margin_left = 1144.0
+margin_top = 320.0
+margin_right = 1500.0
+margin_bottom = 346.0
+custom_fonts/font = SubResource( 27 )
+text = "Checkpoint!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Guide"]
+margin_left = 800.0
+margin_right = 888.0
+margin_bottom = 374.0
+custom_fonts/font = SubResource( 26 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Press Down To Fall"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Guide"]
+margin_left = 1176.0
+margin_top = 5.56
+margin_right = 1264.0
+margin_bottom = 379.56
+custom_fonts/font = SubResource( 26 )
+custom_colors/font_color = Color( 1, 0.960784, 0, 1 )
+text = "Press USE to Push Box
+<-"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Guide"]
+margin_left = 544.0
+margin_top = -112.0
+margin_right = 632.0
+margin_bottom = 262.0
+custom_fonts/font = SubResource( 26 )
+custom_colors/font_color = Color( 0.780392, 0, 1, 1 )
+text = "Press USE to Grab Item
+<-"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+>>>>>>> Stashed changes
 
 [node name="collision" type="TileMap" parent="."]
+position = Vector2( 0, 0.4347 )
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 2
 format = 1
+<<<<<<< Updated upstream
 tile_data = PoolIntArray( 327743, 0, 0, 393279, 0, 0, 458815, 0, 0, 524351, 0, 0, 589887, 0, 0, 655423, 0, 0, 720959, 0, 0, 786495, 0, 0, 852031, 0, 0, 917567, 0, 0, 983103, 0, 0, 1048639, 0, 0, 1114175, 0, 0, 1179711, 0, 0, 1310701, 0, 0, 1310702, 0, 0, 1310703, 0, 0, 1310704, 0, 0, 1310705, 0, 0, 1310706, 0, 0, 1310707, 0, 0, 1310708, 0, 0, 1310709, 0, 0, 1310710, 0, 0, 1310711, 0, 0, 1310712, 0, 0, 1310713, 0, 0, 1310714, 0, 0, 1310715, 0, 0, 1310716, 0, 0, 1310717, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245229, 0, 0, 1245230, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245253, 0, 0, 1245254, 0, 0, 1245255, 0, 0, 1245256, 0, 0, 1245257, 0, 0, 1245258, 0, 0, 1245259, 0, 0, 1245260, 0, 0, 1245261, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245264, 0, 0 )
+=======
+tile_data = PoolIntArray( -720897, 0, 0, -786255, 536870912, 0, -655361, 0, 0, -720719, 536870912, 0, -589825, 0, 0, -655183, 536870912, 0, -524289, 0, 0, -589647, 536870912, 0, -458753, 0, 0, -524111, 536870912, 0, -393217, 0, 0, -458575, 536870912, 0, -327681, 0, 0, -393039, 536870912, 0, -262145, 0, 0, -327503, 536870912, 0, -196609, 0, 0, -261967, 536870912, 0, -131073, 0, 0, -196431, 536870912, 0, -65537, 0, 0, -130895, 536870912, 0, -1, 0, 0, -65359, 536870912, 0, 65535, 0, 0, 177, 536870912, 0, 131071, 0, 0, 65713, 536870912, 0, 196607, 0, 0, 131249, 536870912, 0, 262143, 0, 0, 196785, 536870912, 0, 327679, 0, 0, 262321, 536870912, 0, 393215, 0, 0, 327857, 536870912, 0, 458751, 0, 0, 393393, 536870912, 0, 524287, 0, 0, 458929, 536870912, 0, 589823, 0, 0, 524465, 536870912, 0, 655359, 0, 0, 590001, 536870912, 0, 720895, 0, 0, 655537, 536870912, 0, 786431, 0, 0, 721073, 536870912, 0, 851967, 0, 0, 786609, 536870912, 0, 917503, 0, 0, 852145, 536870912, 0, 983039, 0, 0, 917681, 536870912, 0, 1048575, 0, 0, 983217, 536870912, 0, 1114111, 0, 0, 1048753, 536870912, 0, 1179647, 0, 0, 1114289, 536870912, 0, 1245183, 0, 0, 1179825, 536870912, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1245226, 0, 0, 1245227, 0, 0, 1245228, 0, 0, 1245229, 0, 0, 1245230, 0, 0, 1245231, 0, 0, 1245232, 0, 0, 1245233, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1245236, 0, 0, 1245237, 0, 0, 1245238, 0, 0, 1245239, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245253, 0, 0, 1245254, 0, 0, 1245255, 0, 0, 1245256, 0, 0, 1245257, 0, 0, 1245258, 0, 0, 1245259, 0, 0, 1245260, 0, 0, 1245261, 0, 0, 1245262, 0, 0, 1245263, 0, 0, 1245264, 0, 0, 1245265, 0, 0, 1245266, 0, 0, 1245267, 0, 0, 1245268, 0, 0, 1245269, 0, 0, 1245270, 0, 0, 1245271, 0, 0, 1245272, 0, 0, 1245273, 0, 0, 1245274, 0, 0, 1245275, 0, 0, 1245276, 0, 0, 1245277, 0, 0, 1245278, 0, 0, 1245279, 0, 0, 1245280, 0, 0, 1245281, 0, 0, 1245282, 0, 0, 1245283, 0, 0, 1245284, 0, 0, 1245285, 0, 0, 1245286, 0, 0, 1245287, 0, 0, 1245288, 0, 0, 1245289, 0, 0, 1245290, 0, 0, 1245291, 0, 0, 1245292, 0, 0, 1245293, 0, 0, 1245294, 0, 0, 1245295, 0, 0, 1245296, 0, 0, 1245297, 0, 0, 1245298, 0, 0, 1245299, 0, 0, 1245300, 0, 0, 1245301, 0, 0, 1245302, 0, 0, 1245303, 0, 0, 1245304, 0, 0, 1245305, 0, 0, 1245306, 0, 0, 1245307, 0, 0, 1245308, 0, 0, 1245309, 0, 0, 1245310, 0, 0, 1245311, 0, 0, 1245312, 0, 0, 1245313, 0, 0, 1245314, 0, 0, 1245315, 0, 0, 1245316, 0, 0, 1245317, 0, 0, 1245318, 0, 0, 1245319, 0, 0, 1245320, 0, 0, 1245321, 0, 0, 1245322, 0, 0, 1245323, 0, 0, 1245324, 0, 0, 1245325, 0, 0, 1245326, 0, 0, 1245327, 0, 0, 1245328, 0, 0, 1245329, 0, 0, 1245330, 0, 0, 1245331, 0, 0, 1245332, 0, 0, 1245333, 0, 0, 1245334, 0, 0, 1245335, 0, 0, 1245336, 0, 0, 1245337, 0, 0, 1245338, 0, 0, 1245339, 0, 0, 1245340, 0, 0, 1245341, 0, 0, 1245342, 0, 0, 1245343, 0, 0, 1245344, 536870912, 0, 1245345, 536870912, 0, 1245346, 536870912, 0, 1245347, 536870912, 0, 1245348, 536870912, 0, 1245349, 536870912, 0, 1245350, 536870912, 0, 1245351, 536870912, 0, 1245352, 536870912, 0, 1245353, 536870912, 0, 1245354, 536870912, 0, 1245355, 536870912, 0, 1245356, 536870912, 0, 1245357, 536870912, 0, 1245358, 536870912, 0, 1245359, 536870912, 0, 1245360, 536870912, 0, 1245361, 536870912, 0 )
+>>>>>>> Stashed changes
 
 [node name="one_way_collision" type="TileMap" parent="."]
 tile_set = SubResource( 44 )
@@ -474,7 +921,14 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 4
 format = 1
+<<<<<<< Updated upstream
 tile_data = PoolIntArray( 73, 0, 0, 131060, 0, 0, 65609, 0, 0, 196596, 0, 0, 131145, 0, 0, 262132, 0, 0, 196631, 3, 0, 196632, 3, 0, 196633, 3, 0, 196634, 3, 0, 196635, 3, 0, 196636, 3, 0, 196681, 0, 0, 327668, 0, 0, 262197, 3, 0, 262198, 3, 0, 262199, 3, 0, 262200, 3, 0, 262217, 0, 0, 393204, 0, 0, 327753, 0, 0, 458740, 0, 0, 393289, 0, 0, 524276, 0, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458790, 3, 0, 458791, 3, 0, 458792, 3, 0, 458793, 3, 0, 458794, 3, 0, 458795, 3, 0, 458796, 3, 0, 458797, 3, 0, 458798, 3, 0, 458799, 3, 0, 458800, 3, 0, 458801, 3, 0, 458825, 0, 0, 589812, 0, 0, 524341, 3, 0, 524342, 3, 0, 524343, 3, 0, 524344, 3, 0, 524361, 0, 0, 655348, 0, 0, 589897, 0, 0, 720884, 0, 0, 655383, 3, 0, 655385, 3, 0, 655386, 3, 0, 655388, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655433, 0, 0, 786420, 0, 0, 720969, 0, 0, 851956, 0, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786487, 3, 0, 786488, 3, 0, 786489, 3, 0, 786490, 3, 0, 786491, 3, 0, 786492, 3, 0, 786505, 0, 0, 917492, 0, 0, 851992, 3, 0, 851995, 3, 0, 852041, 0, 0, 983028, 0, 0, 917504, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917544, 3, 0, 917545, 3, 0, 917546, 3, 0, 917550, 3, 0, 917551, 3, 0, 917552, 3, 0, 917553, 3, 0, 917577, 0, 0, 1048564, 0, 0, 983046, 3, 0, 983050, 3, 0, 983051, 3, 0, 983052, 3, 0, 983053, 3, 0, 983054, 3, 0, 983055, 3, 0, 983056, 3, 0, 983076, 3, 0, 983077, 3, 0, 983078, 3, 0, 983079, 3, 0, 983113, 0, 0, 1114100, 0, 0, 1048577, 3, 0, 1048578, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048649, 0, 0, 1179636, 0, 0, 1114135, 3, 0, 1114136, 3, 0, 1114137, 3, 0, 1114139, 3, 0, 1114140, 3, 0, 1114185, 0, 0, 1245172, 0, 0, 1179721, 0, 0 )
+=======
+tile_data = PoolIntArray( -196497, 3, 0, -196496, 3, 0, -196495, 3, 0, -196494, 3, 0, -196493, 3, 0, -196492, 3, 0, -65425, 3, 0, -65424, 3, 0, -65423, 3, 0, -65422, 3, 0, -65421, 3, 0, -65420, 3, 0, 100, 3, 0, 101, 3, 0, 102, 3, 0, 103, 3, 0, 104, 3, 0, 105, 3, 0, 65564, 3, 0, 65565, 3, 0, 65566, 3, 0, 65567, 3, 0, 65568, 3, 0, 65569, 3, 0, 65570, 3, 0, 65571, 3, 0, 131110, 3, 0, 131130, 3, 0, 131131, 3, 0, 131132, 3, 0, 131133, 3, 0, 131134, 3, 0, 131135, 3, 0, 131171, 536870915, 0, 131172, 3, 0, 131173, 3, 0, 131174, 3, 0, 131175, 3, 0, 131176, 3, 0, 131177, 3, 0, 131178, 536870915, 0, 131180, 3, 0, 131181, 3, 0, 131182, 3, 0, 131183, 3, 0, 131184, 3, 0, 131185, 3, 0, 131186, 3, 0, 131187, 3, 0, 131188, 3, 0, 196651, 3, 0, 262176, 3, 0, 262177, 3, 0, 262178, 3, 0, 262179, 3, 0, 262254, 3, 0, 327717, 3, 0, 327718, 3, 0, 327719, 3, 0, 393265, 3, 0, 393271, 3, 0, 393276, 3, 0, 393277, 3, 0, 393330, 3, 0, 393373, 536870915, 0, 393374, 536870915, 0, 458784, 3, 0, 458785, 3, 0, 458786, 3, 0, 458787, 3, 0, 458793, 3, 0, 458794, 3, 0, 458795, 3, 0, 458796, 3, 0, 458802, 3, 0, 458803, 3, 0, 458804, 3, 0, 458805, 3, 0, 458806, 3, 0, 458817, 3, 0, 458818, 3, 0, 458819, 3, 0, 458820, 3, 0, 458821, 3, 0, 458822, 3, 0, 458823, 3, 0, 458824, 3, 0, 458862, 3, 0, 458895, 536870915, 0, 458896, 536870915, 0, 458897, 536870915, 0, 458898, 536870915, 0, 524348, 3, 0, 524349, 3, 0, 524411, 3, 0, 524416, 3, 0, 524421, 3, 0, 524426, 536870915, 0, 589861, 3, 0, 589862, 3, 0, 589863, 3, 0, 589925, 3, 0, 589926, 3, 0, 589927, 3, 0, 589928, 3, 0, 589938, 3, 0, 589972, 536870915, 0, 589973, 536870915, 0, 589974, 536870915, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655401, 3, 0, 655403, 3, 0, 655409, 3, 0, 655415, 3, 0, 655420, 3, 0, 655421, 3, 0, 655426, 3, 0, 655428, 3, 0, 655429, 3, 0, 655431, 3, 0, 655470, 3, 0, 655504, 536870915, 0, 655506, 536870915, 0, 655516, 536870915, 0, 655517, 536870915, 0, 655518, 536870915, 0, 655519, 536870915, 0, 786455, 3, 0, 786456, 3, 0, 786457, 3, 0, 786458, 3, 0, 786459, 3, 0, 786469, 3, 0, 786470, 3, 0, 786471, 3, 0, 786484, 3, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 786494, 0, 0, 786495, 0, 0, 786533, 3, 0, 786534, 3, 0, 786535, 3, 0, 786536, 3, 0, 786546, 3, 0, 786580, 536870915, 0, 786581, 536870915, 0, 786582, 536870915, 0, 851998, 6, 0, 852000, 3, 0, 852001, 3, 0, 852002, 3, 0, 852003, 3, 0, 852010, 3, 0, 852011, 3, 0, 852035, 3, 0, 852038, 3, 0, 852069, 536870915, 0, 852070, 536870915, 0, 852071, 536870915, 0, 852072, 536870915, 0, 852078, 3, 0, 852112, 536870915, 0, 852113, 536870915, 0, 917553, 3, 0, 917554, 3, 0, 917558, 3, 0, 917559, 3, 0, 917600, 3, 0, 917601, 3, 0, 917602, 3, 0, 917632, 3, 0, 917633, 3, 0, 917634, 3, 0, 917635, 3, 0, 983060, 3, 0, 983061, 3, 0, 983062, 3, 0, 983063, 3, 0, 983064, 3, 0, 983065, 3, 0, 983066, 3, 0, 983070, 6, 0, 983080, 3, 0, 983081, 3, 0, 983121, 3, 0, 983125, 3, 0, 983129, 3, 0, 983132, 3, 0, 983133, 3, 0, 983134, 3, 0, 983135, 3, 0, 983141, 536870915, 0, 983142, 536870915, 0, 983143, 536870915, 0, 983144, 536870915, 0, 983151, 3, 0, 983152, 3, 0, 983153, 3, 0, 983156, 536870915, 0, 983177, 3, 0, 983195, 536870915, 0, 983196, 536870915, 0, 983197, 536870915, 0, 983198, 536870915, 0, 983199, 536870915, 0, 983200, 536870915, 0, 1048653, 3, 0, 1114178, 3, 0, 1114179, 3, 0, 1114182, 3, 0, 1114183, 3, 0 )
+
+[node name="girl_on_phone" parent="." instance=ExtResource( 17 )]
+position = Vector2( 560, 128 )
+>>>>>>> Stashed changes
 
 [node name="Parrali" parent="." instance=ExtResource( 1 )]
 
@@ -496,10 +950,17 @@ position = Vector2( 792, 208 )
 position = Vector2( 1000, 280 )
 script = ExtResource( 17 )
 
+<<<<<<< Updated upstream
 [node name="animation" type="AnimatedSprite" parent="npcs/bartender"]
 position = Vector2( 0, -8 )
 frames = SubResource( 56 )
 frame = 4
+=======
+[node name="boombox" type="AnimatedSprite" parent="npcs/objects/boombox"]
+position = Vector2( 0, 1.47156 )
+frames = SubResource( 40 )
+frame = 3
+>>>>>>> Stashed changes
 playing = true
 
 [node name="StaticBody2D" parent="npcs/bartender" instance=ExtResource( 15 )]
@@ -513,6 +974,7 @@ stream = ExtResource( 25 )
 position = Vector2( 640, 272 )
 script = ExtResource( 22 )
 
+<<<<<<< Updated upstream
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 420.955, 24 )
 
@@ -525,14 +987,49 @@ limit_top = -720
 limit_right = 1180
 limit_bottom = 380
 editor_draw_limits = true
+=======
+[node name="church_lady" type="Node2D" parent="npcs"]
+position = Vector2( 2528, 284.976 )
+script = SubResource( 58 )
+
+[node name="animation" type="AnimatedSprite" parent="npcs/church_lady"]
+frames = SubResource( 57 )
+animation = "smiling"
+frame = 1
+playing = true
+
+[node name="StaticBody2D" parent="npcs/church_lady" instance=ExtResource( 20 )]
+position = Vector2( 0, -8 )
+
+[node name="NPC" parent="npcs/church_lady" instance=ExtResource( 23 )]
+
+[node name="oboy" type="AudioStreamPlayer2D" parent="npcs/church_lady"]
+stream = ExtResource( 24 )
+volume_db = 12.0
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1432, 280 )
+>>>>>>> Stashed changes
 
 [node name="cars" parent="." instance=ExtResource( 3 )]
 position = Vector2( -112, 192 )
 
+<<<<<<< Updated upstream
 [node name="item" type="Node2D" parent="."]
 position = Vector2( 904, 120 )
 script = ExtResource( 23 )
 item = "Skooner"
+=======
+[node name="box3" parent="boxes" instance=ExtResource( 13 )]
+position = Vector2( 360, 280 )
+moveable = false
+
+[node name="box4" parent="boxes" instance=ExtResource( 13 )]
+position = Vector2( 1112, 96 )
+
+[node name="item" parent="boxes" instance=ExtResource( 15 )]
+position = Vector2( 1496, 284.976 )
+>>>>>>> Stashed changes
 
 [node name="item_anim" type="AnimatedSprite" parent="item"]
 frames = SubResource( 60 )
@@ -544,5 +1041,18 @@ playing = true
 collision_layer = 16
 collision_mask = 14
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="item/StaticBody2D"]
 shape = SubResource( 61 )
+=======
+[node name="box7" parent="boxes" instance=ExtResource( 13 )]
+position = Vector2( 1688, -16 )
+item = "Skooner"
+
+[node name="rosary" parent="boxes" instance=ExtResource( 13 )]
+position = Vector2( 2568, 80 )
+breakable = true
+item = "Rosary"
+
+[node name="Parrali" parent="." instance=ExtResource( 1 )]
+>>>>>>> Stashed changes
